@@ -28,7 +28,7 @@ FlowRouter.route('/login', {
 FlowRouter.route('/attendance', {
     name: 'attendance',
     action(params, queryParams) {
-        BlazeLayout.render('attendance');
+        BlazeLayout.render('attendance_system');
     }
 });
 

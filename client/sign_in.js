@@ -9,7 +9,7 @@ Template.signin.events({
         const password2 = tmpl.find("input[name=password2]").value;
 
         if(password2 === password){
-            const userInfo = { username, email, password, profile: { name } }; // 미티어는 몽고디비의 user 컬렉션에서 사용자와 접속자 정보를 관리하므로 이 스키마를 임의로 변경하면 안됨
+            const userInfo = { username, email, password, profile: { name} }; // 미티어는 몽고디비의 user 컬렉션에서 사용자와 접속자 정보를 관리하므로 이 스키마를 임의로 변경하면 안됨
             Accounts.createUser(userInfo);
             alert("회원가입이 완료되었습니다!")
             FlowRouter.go("/login")
@@ -20,7 +20,7 @@ Template.signin.events({
     },
 
     "click .button_cancel" (evt,tmpl){
-        console.log("취소")
+        FlowRouter.go("/")
     },
 
 
