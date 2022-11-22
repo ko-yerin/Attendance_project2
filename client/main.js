@@ -1,22 +1,35 @@
-import { Template } from 'meteor/templating';
-import { ReactiveVar } from 'meteor/reactive-var';
-
 import './main.html';
+import { FlowRouter } from "meteor/ostrio:flow-router-extra"; //링크를 만들어주는 친구
+import { BlazeLayout } from "meteor/kadira:blaze-layout";// 렌더시켜주는 친구
 
-Template.hello.onCreated(function helloOnCreated() {
-  // counter starts at 0
-  this.counter = new ReactiveVar(0);
+FlowRouter.route('/', {
+    name: 'home',
+    action(params, queryParams) {
+        BlazeLayout.render('home');
+    }
 });
 
-Template.hello.helpers({
-  counter() {
-    return Template.instance().counter.get();
-  },
+FlowRouter.route('/signin', {
+    name: 'signin',
+    action(params, queryParams) {
+        BlazeLayout.render('signin');
+        console.log("signin 되니??");
+    }
 });
 
-Template.hello.events({
-  'click button'(event, instance) {
-    // increment the counter when button is clicked
-    instance.counter.set(instance.counter.get() + 1);
-  },
+FlowRouter.route('/login', {
+    name: 'login',
+    action(params, queryParams) {
+        BlazeLayout.render('login');
+        console.log("login 되니??");
+    }
 });
+
+FlowRouter.route('/attendance', {
+    name: 'attendance',
+    action(params, queryParams) {
+        BlazeLayout.render('attendance');
+    }
+});
+
+console.log("클라이언트가 정상적입니다")
