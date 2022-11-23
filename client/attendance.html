@@ -8,13 +8,13 @@
     <table>
         <thead>
         <tr>
-            <th>출근시간</th>
-            <th>퇴근시간</th>
+            <th>출근</th>
+            <th>퇴근</th>
         </tr>
         </thead>
-        <tbody>
         {{#each list}}
-            <tr id= {{user_id}}>
+            <tbody>
+            <tr>
                 {{#if type}}
                     <td>{{getDate createdAt}}</td>
                     <td></td>
@@ -23,8 +23,7 @@
                     <td>{{getDate createdAt}}</td>
                 {{/if}}
             </tr>
-
-        {{/each}}
-        </tbody>
+            </tbody>
+        {{/each }}
     </table>
 </template>
