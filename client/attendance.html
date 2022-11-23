@@ -1,10 +1,29 @@
-<!--<!DOCTYPE html>-->
-<!--<html lang="en">-->
-<!--<head>-->
-<!--    <meta charset="UTF-8">-->
-<!--    <title>Title</title>-->
-<!--</head>-->
-<!--<body>-->
+<template name="attendance_system">
+    <button class="go_to_work">출근</button>
+    <button class="finish_work">퇴근</button>
+    {{> attendance_list}}
+</template>
 
-<!--</body>-->
-<!--</html>-->
+<template name="attendance_list">
+    <table>
+        <thead>
+        <tr>
+            <th>출근</th>
+            <th>퇴근</th>
+        </tr>
+        </thead>
+        {{#each list}}
+            <tbody>
+            <tr>
+                {{#if type}}
+                    <td>{{getDate createdAt}}</td>
+                    <td></td>
+                {{else}}
+                    <td></td>
+                    <td>{{getDate createdAt}}</td>
+                {{/if}}
+            </tr>
+            </tbody>
+        {{/each }}
+    </table>
+</template>

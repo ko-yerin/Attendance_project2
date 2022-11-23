@@ -1,0 +1,62 @@
+<template name="attendance_system2">
+    <button class="go_to_work">출근</button>
+    <button class="finish_work">퇴근</button>
+    {{> attendance_list2}}
+</template>
+
+<template name="attendance_list2">
+    <table>
+        <thead>
+        <tr>
+            <th>출근시간</th>
+            <th>퇴근시간</th>
+        </tr>
+        </thead>
+        <tbody>
+        {{#each list}}
+            <!--            {{#if type}}-->
+            <!--                <div style="display: inline">-->
+            <!--                    <div>-->
+            <!--                        <tr id= {{user_id}}>-->
+
+            <!--                            <td>{{getDate createdAt}}</td>-->
+
+            <!--                        </tr>-->
+            <!--                    </div>-->
+            <!--                    <div>-->
+            <!--                        <tr id= {{user_id}}>-->
+            <!--                            <td></td>-->
+            <!--                        </tr>-->
+            <!--                    </div>-->
+            <!--                </div>-->
+
+                    <!--            {{else}}-->
+            <!--                <div>-->
+            <!--                    <tr id= {{user_id}}>-->
+            <!--                        <td></td>-->
+            <!--                    </tr>-->
+            <!--                </div>-->
+            <!--                <div>-->
+            <!--                    <tr id= {{user_id}}>-->
+
+
+            <!--                        <td>{{getDate createdAt}}</td>-->
+
+            <!--                    </tr>-->
+            <!--                </div>-->
+
+                    <!--            {{/if}}-->
+            <tr id= {{user_id}}>
+                {{#if type}}
+                    <td>{{getDate createdAt}}</td>
+                    <td></td>
+                {{else}}
+                    <td></td>
+                    <td>{{getDate createdAt}}</td>
+                {{/if}}
+            </tr>
+        {{/each}}
+        </tbody>
+    </table>
+</template>
+
