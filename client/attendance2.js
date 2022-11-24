@@ -1,12 +1,4 @@
-// //버튼하루한번만
-// //insert로 해당데이터를 디비에 저장
-// //한번더 버튼클릭시
-// //db에 저장된 해당아디의 저장된 날짜를 확인
-// //날짜가 오늘이라면 버튼동작안하는 조건문
-// //날짜가 없거나 오늘이 아니라면 동작
-//
-// //시간이 되면 외출, 복귀버튼도
-//
+
 // import {FlowRouter} from "meteor/ostrio:flow-router-extra";
 // import {Template} from "meteor/templating";
 // import {Attendance} from "../lib/collection"

@@ -1,3 +1,6 @@
+//회원가입추가, 로그인안됫을때 attendance안가게
+//attendance에 로그아웃추가
+
 import {Attendance} from "../lib/collection";
 
 Template.attendance_list.helpers({
@@ -14,8 +17,10 @@ Template.attendance_list.helpers({
 
     list() {
         const user = Meteor.user()
-        // console.log("user", user)
-        return Attendance.find({user_id: user?._id}, {limit: 10, sort: {createdAt: -1}}).fetch()
+        console.log("user", user)
+        // let test1 = Attendance.find({user_id: user?._id}, {limit: 20, sort: {createdAt: -1}}).collection.queries
+        // console.log('test', test1 )
+        return Attendance.find({user_id: user?._id}, {limit: 20, sort: {createdAt: -1}})
     },
 
     getDate(date) {
@@ -25,7 +30,7 @@ Template.attendance_list.helpers({
 })
 
 let in_submit = false;
-let out_submit = true;
+let out_submit = false;
 
 Template.attendance_system.events({
     "click .go_to_work": function () {

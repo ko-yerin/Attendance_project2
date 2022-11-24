@@ -1,5 +1,20 @@
 import {FlowRouter} from "meteor/ostrio:flow-router-extra";
 
+
+// Template.login_check.helpers({
+//     login_checking(){
+//         console.log("asfas",Meteor.userId())
+//
+//         if(Meteor.userId()){
+//             console.log("아디있다")
+//             return true;
+//         }else{
+//             console.log("아디없다")
+//             return false;
+//         }
+//     }
+// })
+
 Template.login.events({
     "click .check" (evt,tmpl) {
         const username = tmpl.find("input[name=username]").value;

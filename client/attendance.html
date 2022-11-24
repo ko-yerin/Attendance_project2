@@ -1,6 +1,11 @@
 <template name="attendance_system">
     <button class="go_to_work">출근</button>
     <button class="finish_work">퇴근</button>
+<!--    <thead>-->
+<!--    {{#each list}}-->
+
+<!--    {{/each}}-->
+<!--    </thead>-->
     {{> attendance_list}}
 </template>
 
@@ -8,19 +13,18 @@
     <table>
         <thead>
         <tr>
-            <th>출근</th>
-            <th>퇴근</th>
+            <th>출퇴근</th>
         </tr>
         </thead>
         {{#each list}}
             <tbody>
             <tr>
                 {{#if type}}
-                    <td>{{getDate createdAt}}</td>
-                    <td></td>
+                    <td style="background-color: yellowgreen">출근:{{getDate createdAt}}</td>
+                    <img src="https://cdn-icons-png.flaticon.com/512/5610/5610944.png " width="30" height="30" alt="" title="" class="img-small">
                 {{else}}
-                    <td></td>
-                    <td>{{getDate createdAt}}</td>
+                    <td style="background-color: indianred">퇴근:{{getDate createdAt}}</td>
+                    <img src="   https://cdn-icons-png.flaticon.com/512/198/198141.png " width="30" height="30" alt="" title="" class="img-small">
                 {{/if}}
             </tr>
             </tbody>
