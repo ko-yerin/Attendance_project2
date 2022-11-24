@@ -4,6 +4,7 @@
 //3. 컴플레인 받으면 DB지워지게
 
 import {Attendance} from "../lib/collection";
+import {FlowRouter} from "meteor/ostrio:flow-router-extra";
 
 Template.admin.helpers({
   type() {
@@ -12,18 +13,23 @@ Template.admin.helpers({
   },
 
   list(){
-    // console.log("sadsa",Attendance.find({}))
   return Attendance.find({})
   },
-  // in_List() {
-  //   return Attendance.find({ type: "출근" });
-  // },
+
   Times(date) {
-    // console.log(date);
     return date?.toLocaleString();
   },
-  // out_List() {
-  //   return Attendance.find({ type: "퇴근" });
-  // },
-
 });
+
+Template.admin.events({
+  "click .back": function () {
+    FlowRouter.go("/attendance");
+  },
+
+  "click .delete":function(){
+    console.log("삭제")
+    console.log(this)
+
+    Attendance.remove({_id : this._id})
+  }
+})

@@ -1,5 +1,5 @@
 <template name="admin">
-
+  <button class="back">back</button>
   <table class="c-table">
     <thead class="c-table__head">
     <tr class="c-table__row c-table__row--heading">
@@ -14,9 +14,11 @@
         {{#if type}}
           <td class="c-table__cell">{{name}}</td>
           <td style="background-color: indianred" class="c-table__cell">출근:{{Times createdAt}}</td>
+          <button class="delete">X</button>
         {{else}}
           <td class="c-table__cell">{{name}}</td>
           <td style="background-color: yellowgreen" class="c-table__cell">퇴근:{{Times createdAt}}</td>
+          <button class="delete">X</button>
         {{/if}}
       </tr>
     {{/each}}
