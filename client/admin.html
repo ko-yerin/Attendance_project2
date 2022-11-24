@@ -1,0 +1,25 @@
+<template name="admin">
+
+  <table class="c-table">
+    <thead class="c-table__head">
+    <tr class="c-table__row c-table__row--heading">
+      <th class="c-table__cell">이름</th>
+      <th class="c-table__cell">출퇴근</th>
+    </tr>
+    </thead>
+
+    <tbody class="c-table__body">
+    {{#each list}}
+      <tr class="c-table__row">
+        {{#if type}}
+          <td class="c-table__cell">{{name}}</td>
+          <td style="background-color: indianred" class="c-table__cell">출근:{{Times createdAt}}</td>
+        {{else}}
+          <td class="c-table__cell">{{name}}</td>
+          <td style="background-color: yellowgreen" class="c-table__cell">퇴근:{{Times createdAt}}</td>
+        {{/if}}
+      </tr>
+    {{/each}}
+    </tbody>
+  </table>
+</template>
