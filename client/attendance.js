@@ -2,6 +2,7 @@
 //attendance에 로그아웃추가
 
 import {Attendance} from "../lib/collection";
+import {FlowRouter} from "meteor/ostrio:flow-router-extra";
 
 Template.attendance_list.helpers({
     type() {
@@ -12,7 +13,6 @@ Template.attendance_list.helpers({
         } else {
             return false;
         }
-
     },
 
     list() {
@@ -33,6 +33,9 @@ let in_submit = false;
 let out_submit = false;
 
 Template.attendance_system.events({
+    "click .button_admin": function () {
+        FlowRouter.go("/admin");
+    },
     "click .go_to_work": function () {
         // console.log("출근")
         const user = Meteor.user()
@@ -57,8 +60,6 @@ Template.attendance_system.events({
             })
             alert("출근되셨습니다")
         }
-
-
     },
     "click .finish_work": function () {
         const user = Meteor.user()
