@@ -8,6 +8,7 @@ import { FlowRouter } from "meteor/ostrio:flow-router-extra";
 import { Session } from "meteor/session";
 
 Template.admin.helpers({
+  // todo: 사용되고 있다면 어디에 사용하고 있나요?
   type() {
     // console.log("this", this.type);
     return this.type === "출근";

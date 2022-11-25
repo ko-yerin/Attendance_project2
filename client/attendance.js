@@ -5,6 +5,7 @@ import { Attendance } from "../lib/collection";
 import { FlowRouter } from "meteor/ostrio:flow-router-extra";
 
 Template.attendance_list.helpers({
+  // todo: 사용하지 않는 헬퍼로 보입니다... 사용하고 있다면 어디에서 사용하고 있는지 알려주세요.
   type() {
     // console.log("this", this)
     return this.type === "출근";
@@ -32,6 +33,7 @@ let out_submit = false;
 
 Template.attendance_system.helpers({
   isLogin() {
+    // todo: 한줄로 줄여볼까요?
     if (Meteor.userId()) {
       console.log("로그인 중");
       return true;

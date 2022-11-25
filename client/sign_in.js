@@ -24,12 +24,15 @@ Template.signin.events({
         }
     },
 
+    // todo: 잘 하셨습니다만, a 테그가 아닌 버튼 이벤트로 라우팅을 핸들링 했어야 하는 이유가 있었을까요?
+    // todo: 웹 접근성이 무엇인지와 이렇게 하신 의도가 궁금합니다.
     "click .button_cancel" (){
         FlowRouter.go("/")
     },
 
     'keyup input' : function (evt, tmpl) {
         if (evt.which === 13) {
+            // todo: 맨 위 이벤트 로직과 이곳에서부터의 로직은 동일해보입니다. 프로그래머는 중복코드를 매우 싫어하고, 비효율적이라 생각하는데 더 좋게 고쳐볼 수 있을까요.
             const username = tmpl.find("input[name=username]").value;
             const email = tmpl.find("input[name=email]").value;
             const name = tmpl.find("input[name=name]").value;
