@@ -1,26 +1,24 @@
-import {FlowRouter} from "meteor/ostrio:flow-router-extra";
+import { FlowRouter } from "meteor/ostrio:flow-router-extra";
 
 Template.header.helpers({
-  is_login(){
-    if(Meteor.user()){
+  is_login() {
+    if (Meteor.user()) {
       return true;
-    }
-    else{
+    } else {
       return false;
     }
-  }
-})
+  },
+});
 
 Template.header.events({
-  "click .logout" : function (){
+  "click .logout": function () {
     Meteor.logout();
+    FlowRouter.go("/login");
   },
-  "click .signin":function(){
-    FlowRouter.go("/signin")
+  "click .signin": function () {
+    FlowRouter.go("/signin");
   },
-  "click .login":function(){
-    FlowRouter.go("/login")
-  }
-})
-
-
+  "click .login": function () {
+    FlowRouter.go("/login");
+  },
+});

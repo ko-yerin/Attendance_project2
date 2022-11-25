@@ -1,9 +1,17 @@
 <template name="admin">
+  {{#if isAdmin}}
+  {{> searchAttendanceList}}
+
   <button class="back">back</button>
+
+<!--  ✅ HERE-->
   <p>
-    <input type="text" name="username" placeholder="이름">
+    <input onClick="window.location.reload()" type="text" name="username" placeholder="이름">
     <button class="btn-search">확인</button>
   </p>
+
+
+
   <table class="c-table">
     <thead class="c-table__head">
     <tr class="c-table__row c-table__row--heading">
@@ -28,4 +36,18 @@
     {{/each}}
     </tbody>
   </table>
+  {{else}} nope
+  {{/if}}
+</template>
+
+<template name="searchAttendanceList">
+  <h1>hey</h1>
+  {{#each searchList}}
+
+  {{#if type2}}
+    <p>name:{{name}} 😇출근:{{getDate createdAt}}</p>
+  {{else}}
+    <p>name:{{name}} 😇퇴근:{{getDate createdAt}}</p>
+  {{/if}}
+  {{/each}}
 </template>
