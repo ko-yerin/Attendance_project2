@@ -1,11 +1,13 @@
 import { FlowRouter } from "meteor/ostrio:flow-router-extra";
 
+// todo: 이곳도 중복 코드로 되어 있네요. 이걸 해결하는 방법은 여러가지 입니다. 해결이 필요합니다.
 Template.login.events({
   "click .check"(evt, tmpl) {
     const username = tmpl.find("input[name=username]").value;
     const password = tmpl.find("input[name=password]").value;
 
     // console.log("admin",Meteor.user())
+    // todo: 값의 유효성 검사는 안하시는 건가요?
 
     Meteor.loginWithPassword(username, password, function (error) {
       if (!error) {

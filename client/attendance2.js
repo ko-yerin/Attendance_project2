@@ -1,4 +1,4 @@
-
+// todo: 아무 필요없는 더미 코드들이 보이는데 이 파일은 특히 심하네요. 사용하지 않는 파일을 남겨둔 이유가 있을까요?
 // import {FlowRouter} from "meteor/ostrio:flow-router-extra";
 // import {Template} from "meteor/templating";
 // import {Attendance} from "../lib/collection"
