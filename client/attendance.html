@@ -1,14 +1,15 @@
 <template name="attendance_system">
-    <button class="button_admin">admin</button>
-    <button class="button_logout">로그아웃</button>
+
+    {{#if isLogin}}
+<!--    <button class="button_logout">로그아웃</button>-->
     <button class="go_to_work">출근</button>
     <button class="finish_work">퇴근</button>
-<!--    <thead>-->
-<!--    {{#each list}}-->
 
-<!--    {{/each}}-->
-<!--    </thead>-->
     {{> attendance_list}}
+
+    {{else}}
+        {{> login}}
+    {{/if}}
 </template>
 
 <template name="attendance_list">

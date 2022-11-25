@@ -27,3 +27,4 @@ blaze-hot               # Update files using Blaze's API with HMR
 ostrio:flow-router-extra
 kadira:blaze-layout
 accounts-password
+session

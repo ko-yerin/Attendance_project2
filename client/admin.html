@@ -1,0 +1,53 @@
+<template name="admin">
+  {{#if isAdmin}}
+  {{> searchAttendanceList}}
+
+  <button class="back">back</button>
+
+<!--  ✅ HERE-->
+  <p>
+    <input onClick="window.location.reload()" type="text" name="username" placeholder="이름">
+    <button class="btn-search">확인</button>
+  </p>
+
+
+
+  <table class="c-table">
+    <thead class="c-table__head">
+    <tr class="c-table__row c-table__row--heading">
+      <th class="c-table__cell">이름</th>
+      <th class="c-table__cell">출퇴근</th>
+    </tr>
+    </thead>
+
+    <tbody class="c-table__body">
+    {{#each list}}
+      <tr class="c-table__row">
+        {{#if type}}
+          <td class="c-table__cell">{{name}}</td>
+          <td style="background-color: indianred" class="c-table__cell">출근:{{Times createdAt}}</td>
+          <button class="delete">X</button>
+        {{else}}
+          <td class="c-table__cell">{{name}}</td>
+          <td style="background-color: yellowgreen" class="c-table__cell">퇴근:{{Times createdAt}}</td>
+          <button class="delete">X</button>
+        {{/if}}
+      </tr>
+    {{/each}}
+    </tbody>
+  </table>
+  {{else}} nope
+  {{/if}}
+</template>
+
+<template name="searchAttendanceList">
+  <h1>hey</h1>
+  {{#each searchList}}
+
+  {{#if type2}}
+    <p>name:{{name}} 😇출근:{{getDate createdAt}}</p>
+  {{else}}
+    <p>name:{{name}} 😇퇴근:{{getDate createdAt}}</p>
+  {{/if}}
+  {{/each}}
+</template>

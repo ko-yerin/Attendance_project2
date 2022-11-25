@@ -1,0 +1,95 @@
+{
+  "compilerOptions": {
+    "checkJs": true,
+    "allowJs": true,
+    "jsx": "react",
+    "baseUrl": ".",
+    "paths": {
+      "/*": [
+        "./*"
+      ],
+      "meteor/mongo": [
+        "/Users/anhyoseung/.meteor/packages/mongo/1.16.1/web.browser/local_collection_driver.js",
+        "/Users/anhyoseung/.meteor/packages/mongo/1.16.1/web.browser/collection.js",
+        "/Users/anhyoseung/.meteor/packages/mongo/1.16.1/web.browser/connection_options.js",
+        "/Users/anhyoseung/.meteor/packages/mongo/1.16.1/web.browser/doc_fetcher.js",
+        "/Users/anhyoseung/.meteor/packages/mongo/1.16.1/web.browser/mongo_driver.js",
+        "/Users/anhyoseung/.meteor/packages/mongo/1.16.1/web.browser/mongo_utils.js",
+        "/Users/anhyoseung/.meteor/packages/mongo/1.16.1/web.browser/observe_multiplex.js",
+        "/Users/anhyoseung/.meteor/packages/mongo/1.16.1/web.browser/oplog_observe_driver.js",
+        "/Users/anhyoseung/.meteor/packages/mongo/1.16.1/web.browser/oplog_tailing.js",
+        "/Users/anhyoseung/.meteor/packages/mongo/1.16.1/web.browser/oplog_v2_converter.js",
+        "/Users/anhyoseung/.meteor/packages/mongo/1.16.1/web.browser/polling_observe_driver.js",
+        "/Users/anhyoseung/.meteor/packages/mongo/1.16.1/web.browser/remote_collection_driver.js"
+      ],
+      "meteor/jquery": [
+        "/Users/anhyoseung/.meteor/packages/jquery/3.0.0/web.browser/main.js"
+      ],
+      "meteor/reactive-var": [
+        "/Users/anhyoseung/.meteor/packages/reactive-var/1.0.12/web.browser/reactive-var.js"
+      ],
+      "meteor/tracker": [
+        "/Users/anhyoseung/.meteor/packages/tracker/1.2.1/web.browser/tracker.js"
+      ],
+      "meteor/es5-shim": [
+        "/Users/anhyoseung/.meteor/packages/es5-shim/4.8.0/web.browser/client.js",
+        "/Users/anhyoseung/.meteor/packages/es5-shim/4.8.0/web.browser/console.js",
+        "/Users/anhyoseung/.meteor/packages/es5-shim/4.8.0/web.browser/cordova.js",
+        "/Users/anhyoseung/.meteor/packages/es5-shim/4.8.0/web.browser/export_globals.js",
+        "/Users/anhyoseung/.meteor/packages/es5-shim/4.8.0/web.browser/import_globals.js"
+      ],
+      "meteor/ecmascript": [
+        "/Users/anhyoseung/.meteor/packages/ecmascript/0.16.3/web.browser/ecmascript.js"
+      ],
+      "meteor/shell-server": [
+        "/Users/anhyoseung/.meteor/packages/shell-server/0.5.0/web.browser/main.js",
+        "/Users/anhyoseung/.meteor/packages/shell-server/0.5.0/web.browser/shell-server.js"
+      ],
+      "meteor/hot-module-replacement": [
+        "/Users/anhyoseung/.meteor/packages/hot-module-replacement/0.5.2/web.browser/hot-api.js",
+        "/Users/anhyoseung/.meteor/packages/hot-module-replacement/0.5.2/web.browser/client.js",
+        "/Users/anhyoseung/.meteor/packages/hot-module-replacement/0.5.2/web.browser/server.js"
+      ],
+      "meteor/blaze-hot": [
+        "/Users/anhyoseung/.meteor/packages/blaze-hot/1.1.1/web.browser/hot.js",
+        "/Users/anhyoseung/.meteor/packages/blaze-hot/1.1.1/web.browser/update-templates.js"
+      ],
+      "meteor/ostrio:flow-router-extra": [
+        "/Users/anhyoseung/.meteor/packages/ostrio_flow-router-extra/3.9.0/web.browser/client/_init.js",
+        "/Users/anhyoseung/.meteor/packages/ostrio_flow-router-extra/3.9.0/web.browser/client/active.route.js",
+        "/Users/anhyoseung/.meteor/packages/ostrio_flow-router-extra/3.9.0/web.browser/client/group.js",
+        "/Users/anhyoseung/.meteor/packages/ostrio_flow-router-extra/3.9.0/web.browser/client/modules.js",
+        "/Users/anhyoseung/.meteor/packages/ostrio_flow-router-extra/3.9.0/web.browser/client/renderer.js",
+        "/Users/anhyoseung/.meteor/packages/ostrio_flow-router-extra/3.9.0/web.browser/client/route.js",
+        "/Users/anhyoseung/.meteor/packages/ostrio_flow-router-extra/3.9.0/web.browser/client/router.js",
+        "/Users/anhyoseung/.meteor/packages/ostrio_flow-router-extra/3.9.0/web.browser/client/triggers.js",
+        "/Users/anhyoseung/.meteor/packages/ostrio_flow-router-extra/3.9.0/web.browser/lib/_helpers.js",
+        "/Users/anhyoseung/.meteor/packages/ostrio_flow-router-extra/3.9.0/web.browser/server/_init.js",
+        "/Users/anhyoseung/.meteor/packages/ostrio_flow-router-extra/3.9.0/web.browser/server/group.js",
+        "/Users/anhyoseung/.meteor/packages/ostrio_flow-router-extra/3.9.0/web.browser/server/route.js",
+        "/Users/anhyoseung/.meteor/packages/ostrio_flow-router-extra/3.9.0/web.browser/server/router.js",
+        "/Users/anhyoseung/.meteor/packages/ostrio_flow-router-extra/3.9.0/web.browser/server/plugins/fast-render.js"
+      ],
+      "meteor/kadira:blaze-layout": [
+        "/Users/anhyoseung/.meteor/packages/kadira_blaze-layout/2.0.1/web.browser//packages/kadira_blaze-layout.js"
+      ],
+      "meteor/accounts-password": [
+        "/Users/anhyoseung/.meteor/packages/accounts-password/2.3.1/web.browser/password_client.js",
+        "/Users/anhyoseung/.meteor/packages/accounts-password/2.3.1/web.browser/email_templates.js",
+        "/Users/anhyoseung/.meteor/packages/accounts-password/2.3.1/web.browser/password_server.js"
+      ],
+      "meteor/session": [
+        "/Users/anhyoseung/.meteor/packages/session/1.2.1/web.browser/session.js"
+      ]
+    }
+  },
+  "typeAcquisition": {
+    "include": [
+      "meteor"
+    ]
+  },
+  "exclude": [
+    "node_modules",
+    ".meteor"
+  ]
+}

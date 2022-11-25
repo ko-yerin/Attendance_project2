@@ -32,4 +32,11 @@ FlowRouter.route('/attendance', {
     }
 });
 
+FlowRouter.route('/admin', {
+    name: 'admin',
+    action(params, queryParams) {
+        BlazeLayout.render('admin');
+    }
+});
+
 console.log("클라이언트가 정상적입니다")
