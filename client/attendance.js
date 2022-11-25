@@ -83,3 +83,5 @@ Template.attendance_system.events({
         // console.log("퇴근")
     }
 })
+
+

@@ -26,6 +26,11 @@ Template.admin.events({
     FlowRouter.go("/attendance");
   },
 
+  "click .btn-search":function (event){
+
+
+  },
+
   "click .delete":function(){
     console.log("삭제")
     console.log(this)

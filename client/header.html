@@ -1,8 +1,17 @@
 <template name="header">
     <div>
-        <h1>
+        <h1 id="header-right">
             <img src="../logo.jpeg" style="width: 120px">
-            <h2>출결시스템</h2>
+
+
+            {{#if is_login}}
+            <button class="logout" style="float: right">logout</button>
+            {{else}}
+              <button class="login" style="float: right">login</button>
+              <button class="signin" style="float: right">signin</button>
+            {{/if}}
+
+          <h2>출결시스템</h2>
 
         </h1>
     </div>
