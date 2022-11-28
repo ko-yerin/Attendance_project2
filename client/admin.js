@@ -46,11 +46,11 @@ Template.admin.helpers({
 });
 
 Template.admin.events({
-  "click .back": function () {
+  "click #back": function () {
     FlowRouter.go("/attendance");
   },
 
-  "click .btn-search": function (event, tmpl) {
+  "click #btn-search": function (event, tmpl) {
     const Input = tmpl.find("input[name=username]").value;
     // const check = Attendance.find({ name: Input }).fetch();
     console.log(Input);
