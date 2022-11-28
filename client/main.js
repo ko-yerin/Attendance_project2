@@ -5,14 +5,14 @@ import { BlazeLayout } from "meteor/kadira:blaze-layout";// 렌더시켜주는 �
 
 FlowRouter.route('/', {
     name: 'home',
-    action(params, queryParams) {
+    action() {
         BlazeLayout.render('home');
     }
 });
 
 FlowRouter.route('/signin', {
     name: 'signin',
-    action(params, queryParams) {
+    action() {
         BlazeLayout.render('signin');
         console.log("signin 되니??");
     }
@@ -20,7 +20,7 @@ FlowRouter.route('/signin', {
 
 FlowRouter.route('/login', {
     name: 'login',
-    action(params, queryParams) {
+    action() {
         BlazeLayout.render('login');
         console.log("login 되니??");
     }
@@ -28,14 +28,14 @@ FlowRouter.route('/login', {
 
 FlowRouter.route('/attendance', {
     name: 'attendance',
-    action(params, queryParams) {
+    action() {
         BlazeLayout.render('attendance_system');
     }
 });
 
 FlowRouter.route('/admin', {
     name: 'admin',
-    action(params, queryParams) {
+    action() {
         BlazeLayout.render('admin');
     }
 });
