@@ -3,7 +3,7 @@
 //2. 검색창 => 그 유저 출퇴근 기록 확인 서칭
 //3. 컴플레인 받으면 DB지워지게
 
-import { Attendance } from "../lib/collection";
+import  Attendance  from "../lib/collection";
 import { FlowRouter } from "meteor/ostrio:flow-router-extra";
 import { Session } from "meteor/session";
 
