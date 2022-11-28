@@ -1,23 +1,66 @@
 <template name="signin">
     <div>
-        <p>
-            <input type="text" name="username" placeholder="아이디">
-        </p>
-        <p>
-            <input type="email" name="email" placeholder="이메일">
-        </p>
-        <p>
-            <input type="text" name="name" placeholder="이름">
-        </p>
-        <p>
-            <input type="password" name="password" placeholder="비번">
-        </p>
-        <p>
-            <input type="password" name="password2" placeholder="비번 확인">
-        </p>
-        <p>
-            <button class="button_sign">가입</button>
-            <button class="button_cancel">취소</button>
-        </p>
+        <br /><br /><br />
+        <form class="o-container o-container--xsmall c-card u-high">
+            <header class="c-card__header">
+                <h2 class="c-heading">
+                    Sign In
+                    <div class="c-heading__sub">New users</div>
+                </h2>
+            </header>
+            <div class="c-card__body">
+                <div class="o-form-element">
+                    <label class="c-label">
+                        ID:
+                        <input name="username" class="c-field c-field--label" type="text" placeholder="your@email.com" />
+                        <div role="tooltip" class="c-hint">
+                            The email used to register the account
+                        </div>
+                    </label>
+                </div>
+                <label class="o-form-element c-label">
+                    Email:
+                    <input name="email" class="c-field c-field--label" type="Email" />
+                </label>
+                <label class="o-form-element c-label">
+                    Name:
+                    <input name="name" class="c-field c-field--label" type="text" />
+                </label>
+                <label class="o-form-element c-label">
+                    Password:
+                    <input name="password" class="c-field c-field--label" type="password" />
+                </label>
+                <label class="o-form-element c-label">
+                    Password Check:
+                    <input name="password2" class="c-field c-field--label" type="password" />
+                </label>
+                <div class="o-form-element">
+                </div>
+            </div>
+            <footer class="c-card__footer">
+                <button  id="button_sign" type="button" class="c-button c-button--brand c-button--block">
+                    Sign in
+                </button>
+            </footer>
+        </form>
+<!--        <p>-->
+<!--            <input type="text" name="username" placeholder="아이디">-->
+<!--        </p>-->
+<!--        <p>-->
+<!--            <input type="email" name="email" placeholder="이메일">-->
+<!--        </p>-->
+<!--        <p>-->
+<!--            <input type="text" name="name" placeholder="이름">-->
+<!--        </p>-->
+<!--        <p>-->
+<!--            <input type="password" name="password" placeholder="비번">-->
+<!--        </p>-->
+<!--        <p>-->
+<!--            <input type="password" name="password2" placeholder="비번 확인">-->
+<!--        </p>-->
+<!--        <p>-->
+<!--            <button class="button_sign">가입</button>-->
+<!--            <button class="button_cancel">취소</button>-->
+<!--        </p>-->
     </div>
 </template>

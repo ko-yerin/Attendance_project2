@@ -1,13 +1,14 @@
 <template name="admin">
   {{#if isAdmin}}
 <!--  {{> searchAttendanceList}}-->
+  <button id="back" type="button" class="c-button">back</button>
 
-  <button class="back">back</button>
 
 <!--  ✅ HERE-->
   <p>
-    <input onClick="window.location.reload()" type="text" name="username" placeholder="이름">
-    <button class="btn-search">확인</button>
+    <input class="c-field" placeholder="Type in Name!" type="text" name="username"/>
+    <br />
+    <button id="btn-search" type="button" class="c-button c-button--brand">Search</button>
   </p>
 
 
@@ -36,7 +37,21 @@
         </tr>
       {{/each}}
     {{else}}
-      NOPE searchList
+      {{#each searchList}}
+        {{#if type}}
+    <tr class="c-table__row">
+      <td class="c-table__cell">{{name}}</td>
+      <td style="background-color: indianred" class="c-table__cell">출근:{{Times createdAt}}</td>
+      <button class="delete">X</button>
+    </tr>
+        {{else}}
+    <tr class="c-table__row">
+      <td class="c-table__cell">{{name}}</td>
+      <td style="background-color: yellowgreen" class="c-table__cell">퇴근:{{Times createdAt}}</td>
+      <button class="delete">X</button>
+    </tr>
+        {{/if}}
+      {{/each}}
 
     {{/if}}
 

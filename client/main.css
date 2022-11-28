@@ -26,3 +26,7 @@ body {
   padding: 20px;
   background-image: url("https://www.cre-verse.io/images/news/news4.jpg");
 }
+.footer{
+  position : absolute;
+  bottom : 0;
+}
