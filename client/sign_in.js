@@ -1,7 +1,7 @@
 import {FlowRouter} from "meteor/ostrio:flow-router-extra";
 
 Template.signin.events({
-    "click .button_sign" (evt,tmpl){
+    "click #button_sign" (evt,tmpl){
         const username = tmpl.find("input[name=username]").value;
         const email = tmpl.find("input[name=email]").value;
         const name = tmpl.find("input[name=name]").value;

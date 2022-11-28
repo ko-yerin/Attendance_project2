@@ -2,7 +2,7 @@ import { FlowRouter } from "meteor/ostrio:flow-router-extra";
 
 // todo: 이곳도 중복 코드로 되어 있네요. 이걸 해결하는 방법은 여러가지 입니다. 해결이 필요합니다.
 Template.login.events({
-  "click .check"(evt, tmpl) {
+  "click #check"(evt, tmpl) {
     const username = tmpl.find("input[name=username]").value;
     const password = tmpl.find("input[name=password]").value;
 
@@ -37,7 +37,7 @@ Template.login.events({
     //
     // console.log("!@#",user)
   },
-  "click .button_cancel"() {
+  "click #button_cancel"() {
     FlowRouter.go("/");
   },
 

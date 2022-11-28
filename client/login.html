@@ -1,16 +1,48 @@
 <template name="login">
-    <div>
-        <p>
-            <input type="text" name="username" placeholder="아이디">
-        </p>
-        <p>
-            <input type="password" name="password" placeholder="비번">
-        </p>
-        <p>
-            <button class="check">확인</button>
-            <button class="button_cancel">뒤로</button>
-        </p>
-    </div>
+    <br /> <br />
+    <form class="o-container o-container--xsmall c-card u-high">
+        <header class="c-card__header">
+            <h2 class="c-heading">
+                Login
+                <div class="c-heading__sub">Existing users</div>
+            </h2>
+        </header>
+        <div class="c-card__body">
+            <div class="o-form-element">
+                <label class="c-label">
+                    ID:
+                    <input name="username" class="c-field c-field--label" type="email" placeholder="ID" />
+                    <div role="tooltip" class="c-hint">
+                        The email used to register the account
+                    </div>
+                </label>
+            </div>
+            <label class="o-form-element c-label">
+                Password:
+                <input  name="password" class="c-field c-field--label" type="password" />
+            </label>
+        </div>
+        <footer class="c-card__footer">
+            <button id="check" type="button" class="c-button c-button--brand c-button--block">
+                Login
+            </button>
+            <button id="button_cancel" type="button" class="c-button">
+                Sign In
+            </button>
+        </footer>
+    </form>
+<!--    <div>-->
+<!--        <p>-->
+<!--            <input type="text" name="username" placeholder="아이디">-->
+<!--        </p>-->
+<!--        <p>-->
+<!--            <input type="password" name="password" placeholder="비번">-->
+<!--        </p>-->
+<!--        <p>-->
+<!--            <button class="check">확인</button>-->
+<!--            <button class="button_cancel">뒤로</button>-->
+<!--        </p>-->
+<!--    </div>-->
 </template>
 
 
