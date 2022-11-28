@@ -45,11 +45,10 @@ Template.admin.helpers({
   },
 });
 
-//잠시 주석
-// Template.admin.events({
-//   "click #back": function () {
-//     FlowRouter.go("/attendance");
-//   },
+Template.admin.events({
+  "click #back": function () {
+    FlowRouter.go("/attendance");
+  },
 
   "click #btn-search": function (event, tmpl) {
     const Input = tmpl.find("input[name=username]").value;
