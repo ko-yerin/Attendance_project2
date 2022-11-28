@@ -1,0 +1,22 @@
+<template name="attendance_list">
+  <table>
+    <thead>
+    <tr>
+      <th>출퇴근</th>
+    </tr>
+    </thead>
+    {{#each list}}
+      <tbody>
+      <tr>
+        {{#if type}}
+          <td class="go_to_work_list">출근:{{getDate createdAt}}</td>
+          <img src="https://cdn-icons-png.flaticon.com/512/5610/5610944.png " width="30" height="30">
+        {{else}}
+          <td class="finish_work_list">퇴근:{{getDate createdAt}}</td>
+          <img src="https://cdn-icons-png.flaticon.com/512/198/198141.png " width="30" height="30">
+        {{/if}}
+      </tr>
+      </tbody>
+    {{/each }}
+  </table>
+</template>

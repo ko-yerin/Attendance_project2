@@ -1,13 +1,14 @@
 <template name="admin">
   {{#if isAdmin}}
-  {{> searchAttendanceList}}
+<!--  {{> searchAttendanceList}}-->
+  <button id="back" type="button" class="c-button">back</button>
 
-  <button class="back">back</button>
 
 <!--  ✅ HERE-->
   <p>
-    <input onClick="window.location.reload()" type="text" name="username" placeholder="이름">
-    <button class="btn-search">확인</button>
+    <input class="c-field" placeholder="Type in Name!" type="text" name="username"/>
+    <br />
+    <button id="btn-search" type="button" class="c-button c-button--brand">Search</button>
   </p>
 
 
@@ -21,19 +22,41 @@
     </thead>
 
     <tbody class="c-table__body">
-    {{#each list}}
-      <tr class="c-table__row">
+    {{#if searchName}}
+      {{#each list}}
+        <tr class="c-table__row">
+         {{#if type}}
+           <td class="c-table__cell">{{name}}</td>
+           <td style="background-color: indianred" class="c-table__cell">출근:{{Times createdAt}}</td>
+            <button class="delete">X</button>
+          {{else}}
+            <td class="c-table__cell">{{name}}</td>
+            <td style="background-color: yellowgreen" class="c-table__cell">퇴근:{{Times createdAt}}</td>
+            <button class="delete">X</button>
+          {{/if}}
+        </tr>
+      {{/each}}
+    {{else}}
+      {{#each searchList}}
         {{#if type}}
-          <td class="c-table__cell">{{name}}</td>
-          <td style="background-color: indianred" class="c-table__cell">출근:{{Times createdAt}}</td>
-          <button class="delete">X</button>
+    <tr class="c-table__row">
+      <td class="c-table__cell">{{name}}</td>
+      <td style="background-color: indianred" class="c-table__cell">출근:{{Times createdAt}}</td>
+      <button class="delete">X</button>
+    </tr>
         {{else}}
-          <td class="c-table__cell">{{name}}</td>
-          <td style="background-color: yellowgreen" class="c-table__cell">퇴근:{{Times createdAt}}</td>
-          <button class="delete">X</button>
+    <tr class="c-table__row">
+      <td class="c-table__cell">{{name}}</td>
+      <td style="background-color: yellowgreen" class="c-table__cell">퇴근:{{Times createdAt}}</td>
+      <button class="delete">X</button>
+    </tr>
         {{/if}}
-      </tr>
-    {{/each}}
+      {{/each}}
+
+    {{/if}}
+
+
+
     </tbody>
   </table>
   {{else}} nope
@@ -42,12 +65,24 @@
 
 <template name="searchAttendanceList">
   <h1>hey</h1>
-  {{#each searchList}}
+  {{#if searchName}}
+    Nope
+<!--    {{#each searchList}}-->
 
-  {{#if type2}}
-    <p>name:{{name}} 😇출근:{{getDate createdAt}}</p>
+<!--    {{#if type2}}-->
+<!--      <p>name:{{name}} 😇출근:{{getDate createdAt}}</p>-->
+<!--      {{else}}-->
+<!--      <p>name:{{name}} 😇퇴근:{{getDate createdAt}}</p>-->
+<!--    {{/if}}-->
+<!--    {{/each}}-->
   {{else}}
-    <p>name:{{name}} 😇퇴근:{{getDate createdAt}}</p>
+  {{#each searchList}}
+  {{#if type2}}
+  <p>name:{{name}} 😇출근:{{getDate createdAt}}</p>
+  {{else}}
+  <p>name:{{name}} 😇퇴근:{{getDate createdAt}}</p>
   {{/if}}
   {{/each}}
+  {{/if}}
+
 </template>

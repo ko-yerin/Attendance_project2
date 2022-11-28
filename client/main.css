@@ -1,7 +1,61 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+ul, li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
 body {
   padding: 10px;
   font-family: sans-serif;
 }
-#back{
+
+#back {
   background: bisque;
+}
+
+#logout {
+  margin: 5px;
+  float: right;
+  align-items: center;
+}
+
+#login {
+  margin: 5px;
+  float: right;
+  align-items: center;
+}
+
+#signin {
+  margin: 5px;
+  float: right;
+  align-items: center;
+}
+
+#header-right {
+  font-weight: bold;
+  background-color: #bbbbbb;
+  font-size: 21px;
+  color: white;
+  padding: 20px;
+  background-image: url("https://www.cre-verse.io/images/news/news4.jpg");
+}
+
+.go_to_work_list {
+  background-color: yellowgreen;
+}
+
+.finish_work_list {
+  background-color: indianred;
+}
+
+.footer {
+  position: absolute;
+  bottom: 0;
 }

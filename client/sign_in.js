@@ -9,7 +9,6 @@ Template.signin.helpers({
       return 'password';
     }
   }
-
 });
 // 11.28 추가
 

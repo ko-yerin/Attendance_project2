@@ -13,9 +13,7 @@
     "meteor-node-stubs": "^1.2.1"
   },
   "meteor": {
-    "mainModule": {
-
-    },
+    "mainModule": {},
     "testModule": "tests/main.js"
   }
 }

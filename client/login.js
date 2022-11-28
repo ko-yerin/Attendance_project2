@@ -16,6 +16,7 @@ Template.login.helpers({
 // todo: 이곳도 중복 코드로 되어 있네요. 이걸 해결하는 방법은 여러가지 입니다. 해결이 필요합니다.
 // solution : 함수로 변경하였습니다.
 Template.login.events({
+
   "click .check"(evt, tmpl) {
     LogIn(evt,tmpl);
   },

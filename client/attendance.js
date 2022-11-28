@@ -1,55 +1,20 @@
-//회원가입추가, 로그인안됫을때 attendance안가게
-//attendance에 로그아웃추가
+import Attendance  from "../lib/collection";
 
-import { Attendance } from "../lib/collection";
-import { FlowRouter } from "meteor/ostrio:flow-router-extra";
+Template.attendance_system.helpers({
+  isLogin() {
+    // todo: 한줄로 줄여볼까요?
+    //  --->완료
 
-Template.attendance_list.helpers({
-  // todo: 사용하지 않는 헬퍼로 보입니다... 사용하고 있다면 어디에서 사용하고 있는지 알려주세요.
-  type() {
-    // console.log("this", this)
-    return this.type === "출근";
-  },
-
-  list() {
-    const user = Meteor.user();
-    console.log("user", user);
-    // let test1 = Attendance.find({user_id: user?._id}, {limit: 20, sort: {createdAt: -1}}).collection.queries
-    // console.log('test', test1 )
-    return Attendance.find(
-      { user_id: user?._id },
-      { limit: 20, sort: { createdAt: -1 } }
-    );
-  },
-
-  getDate(date) {
-    // console.log("date",date)
-    return date?.toLocaleString();
+    return Meteor.userId()
   },
 });
 
 let in_submit = false;
 let out_submit = false;
 
-Template.attendance_system.helpers({
-  isLogin() {
-    // todo: 한줄로 줄여볼까요?
-    if (Meteor.userId()) {
-      console.log("로그인 중");
-      return true;
-    } else {
-      console.log("로그인 x");
-      return false;
-    }
-  },
-});
-
 Template.attendance_system.events({
   "click .go_to_work": function () {
-    // console.log("출근")
     const user = Meteor.user();
-
-    // console.log(user)
 
     function submit_check() {
       if (in_submit) {
@@ -73,6 +38,7 @@ Template.attendance_system.events({
     }
   },
   "click .finish_work": function () {
+
     const user = Meteor.user();
 
     function submit_check() {
@@ -95,6 +61,5 @@ Template.attendance_system.events({
       });
       alert("퇴근되셨습니다");
     }
-    // console.log("퇴근")
   },
 });

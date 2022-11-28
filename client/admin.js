@@ -3,15 +3,25 @@
 //2. 검색창 => 그 유저 출퇴근 기록 확인 서칭
 //3. 컴플레인 받으면 DB지워지게
 
-import { Attendance } from "../lib/collection";
+import  Attendance  from "../lib/collection";
 import { FlowRouter } from "meteor/ostrio:flow-router-extra";
 import { Session } from "meteor/session";
 
 Template.admin.helpers({
-  // todo: 사용되고 있다면 어디에 사용하고 있나요?
+  // todo: 사용되고 있다면 어디에 사용하고 있나요? ✅출퇴근 버튼에 사용중입니다 !
   type() {
     // console.log("this", this.type);
     return this.type === "출근";
+  },
+  searchName(){
+    const searchInput = Session.get("searchInput");
+    console.log(searchInput)
+    return !searchInput
+  },
+  searchList() {
+    // console.log(Session.get("searchInput"));
+    const searchInput = Session.get("searchInput");
+    return Attendance.find({ name: searchInput });
   },
 
   list() {
@@ -36,11 +46,11 @@ Template.admin.helpers({
 });
 
 Template.admin.events({
-  "click .back": function () {
+  "click #back": function () {
     FlowRouter.go("/attendance");
   },
 
-  "click .btn-search": function (event, tmpl) {
+  "click #btn-search": function (event, tmpl) {
     const Input = tmpl.find("input[name=username]").value;
     // const check = Attendance.find({ name: Input }).fetch();
     console.log(Input);
