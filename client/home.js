@@ -1,10 +1,14 @@
-// import { FlowRouter } from "meteor/ostrio:flow-router-extra";
-//
-// Template.home.events({
-//     "click .button_sign":function(){
-//         FlowRouter.go("/signin")
-//     },
-//     "click .button_login":function(){
-//         FlowRouter.go("/login")
-//     }
-// })
+import {FlowRouter} from "meteor/ostrio:flow-router-extra";
+
+// 11.28 추가
+Template.home.events({
+  "click .go_attendance": function () {
+    if (Meteor.userId()) {
+      FlowRouter.go("/attendance")
+    } else {
+      alert('로그인이 필요합니다!')
+    }
+
+  }
+})
+// 11.28 추가

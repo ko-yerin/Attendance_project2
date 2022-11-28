@@ -1,24 +1,23 @@
 <template name="login">
-    <div>
-        <p>
-            <input type="text" name="username" placeholder="아이디">
-        </p>
-        <p>
-            <input type="password" name="password" placeholder="비번">
-        </p>
-        <p>
-            <button class="check">확인</button>
-            <button class="button_cancel">뒤로</button>
-        </p>
-    </div>
+  <div>
+    <p>
+      <input type="text" name="username" placeholder="아이디 또는 이메일">
+    </p>
+
+    <p>
+      <input type="{{type_change2}}" name="password" placeholder="비밀번호">
+    </p>
+
+    <!--11.28 추가-->
+    <p>
+      <label><input id="password_check2" type="checkbox">비밀번호 표시</label>
+    </p>
+    <!--11.28 추가-->
+
+    <p>
+      <button class="check">확인</button>
+      <button class="button_cancel">뒤로</button>
+    </p>
+  </div>
 </template>
-
-
-<!--<template name="login_check">-->
-<!--    {{#if login_checking}}-->
-<!--        {{> attendance_system}}-->
-<!--    {{else}}-->
-<!--        {{> login}}-->
-<!--    {{/if}}-->
-<!--</template>-->
 
