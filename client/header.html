@@ -11,13 +11,19 @@
 
             {{#if is_login}}
 <!-- todo: 인라인 스타일은 매우 좋지 않은 습관입니다. 이것을 작성했다는 것은 css를 다룰수 있는 분이 있었다는 것인데 css 파일로 옮겨볼까요? -->
-            <button class="logout" style="float: right">logout</button>
+<!--            <button class="logout" style="float: right">logout</button>-->
+                <button id="logout" type="button" class="c-button">logout</button>
             {{else}}
-              <button class="login" style="float: right">login</button>
-              <button class="signin" style="float: right">signin</button>
+                <button id="login" type="button" class="c-button">login</button>
+                <button id="signin" type="button" class="c-button">signin</button>
+<!--              <button class="login" style="float: right">login</button>-->
+<!--              <button class="signin" style="float: right">signin</button>-->
             {{/if}}
 
-          <h2>출결시스템</h2>
+          <h2>Attendance</h2>
+          <p class="c-paragraph">
+            CREVERSE is having NFT market and Wallet with Metaverse
+          </p>
 
         </h1>
     </div>

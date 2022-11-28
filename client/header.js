@@ -8,14 +8,14 @@ Template.header.helpers({
 });
 
 Template.header.events({
-  "click .logout": function () {
+  "click #logout": function () {
     Meteor.logout();
     FlowRouter.go("/login");
   },
-  "click .signin": function () {
+  "click #signin": function () {
     FlowRouter.go("/signin");
   },
-  "click .login": function () {
+  "click #login": function () {
     FlowRouter.go("/login");
   },
 });
