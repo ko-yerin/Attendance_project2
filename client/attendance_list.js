@@ -6,6 +6,8 @@
 //퇴근을 누를시 출근을 먼저찍어달라고 alert 창
 //근데 하루한번만 찍혀야되니 날짜랑 타입비교해서 있으면 찍히면 안됨
 
+//db에 클릭했는지 안했는지 구분값을 둔후 if문으로
+
 //외출,복귀
 
 import Attendance from "../lib/collection";
@@ -28,9 +30,7 @@ Template.attendance_list.helpers({
 
   list() {
     const user = Meteor.user();
-    console.log("user", user);
-    // let test1 = Attendance.find({user_id: user?._id}, {limit: 20, sort: {createdAt: -1}}).collection.queries
-    // console.log('test', test1 )
+
     return Attendance.find(
       {user_id: user?._id},
       {limit: 20, sort: {createdAt: -1}}
