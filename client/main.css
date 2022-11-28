@@ -5,3 +5,24 @@ body {
 #back{
   background: bisque;
 }
+#logout{
+  margin:5px;
+  float: right;
+  align-items: center;
+}#login{
+   margin:5px;
+   float: right;
+   align-items: center;
+ }#signin{
+    margin:5px;
+    float: right;
+    align-items: center;
+  }
+#header-right {
+  font-weight: bold;
+  background-color: #bbbbbb;
+  font-size: 21px;
+  color: white;
+  padding: 20px;
+  background-image: url("https://www.cre-verse.io/images/news/news4.jpg");
+}
