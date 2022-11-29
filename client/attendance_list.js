@@ -6,7 +6,7 @@
 //퇴근을 누를시 출근을 먼저찍어달라고 alert 창
 //근데 하루한번만 찍혀야되니 날짜랑 타입비교해서 있으면 찍히면 안됨
 
-//db에 클릭했는지 안했는지 구분값을 둔후 if문으로
+//db에 클릭했는지 안했는지 구분값을 둔후 if 문으로
 
 //외출,복귀
 
@@ -18,12 +18,17 @@ Template.attendance_list.helpers({
   //   현재파일 14번째줄 list 함수 return 값을 통해  createdAt를 랜더시키고 있고
   //   9번째줄 type 함수는 if 문법을 사용해 불리언값에따라 출근퇴근을 구분해주는 역할로
   //   사용되고 있습니다.
+  // button_switch(){
+  //   console.log("state",this.state)
+  //   return  this.state === "true"
+  // },
   type() {
-    const db_date = this.createdAt
-    console.log("this", db_date)
-
-    const timestamp = new Date();
-    console.log("timestamp",timestamp)
+    // const db_date = this.createdAt
+    // // console.log("this", db_date)
+    //
+    // const timestamp = new Date();
+    // console.log("timestamp",timestamp)
+    console.log("state",this.state)
 
     return this.type === "출근";
   },
