@@ -13,6 +13,7 @@ Template.attendance_system.helpers({
 // let in_submit = false;
 // let out_submit = false;
 
+
 Template.attendance_system.events({
   "click .go_to_work": function () {
     const user = Meteor.user();
