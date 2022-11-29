@@ -16,12 +16,9 @@ Template.login.helpers({
 // solution : 함수로 변경하였습니다.
 Template.login.events({
 
-
   "click #check"(evt, tmpl) {
     LogIn(evt,tmpl);
-
   },
-
 
   "click #button_cancel"() {
     FlowRouter.go("/");
@@ -31,12 +28,11 @@ Template.login.events({
     if (evt.which === 13) {
 
       LogIn(evt,tmpl);
-
     }
   },
 
   // 11.28 추가
-  "change [type=checkbox]": function (evt, tmpl) {
+  "change [type=checkbox]": function () {
     const checkbox = document.getElementById('password_check2')
     const is_checked = checkbox.checked;
 
@@ -49,7 +45,6 @@ Template.login.events({
 });
 
 // 11.28 추가
-
 function LogIn(event, template) {
   const username = template.find("input[name=username]").value;
   const password = template.find("input[name=password]").value;
@@ -61,7 +56,7 @@ function LogIn(event, template) {
     if (!error) {
       const checkAdmin = Meteor.user().username;
 
-      if (checkAdmin == "admin") {
+      if (checkAdmin === "admin") {
         FlowRouter.go("/admin");
       } else {
         alert("로그인 되었습니다");
