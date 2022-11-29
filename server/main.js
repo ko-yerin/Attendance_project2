@@ -12,10 +12,12 @@ Accounts.validateNewUser(function (user) {
   }
 });
 
+// 11.29 수정
 Accounts.validateNewUser(function (user) {
-  if (user.profile.name) {
+  if (user.profile.name && user.emails) {
     return true;
   } else {
-    throw new Meteor.Error(403, '이름을 입력해주세요!')
+    throw new Meteor.Error(403, '이름 또는 이메일을 입력(확인)해주세요!')
   }
 });
+// 11.29 수정
