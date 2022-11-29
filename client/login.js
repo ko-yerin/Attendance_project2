@@ -16,12 +16,9 @@ Template.login.helpers({
 // solution : 함수로 변경하였습니다.
 Template.login.events({
 
-
   "click #check"(evt, tmpl) {
     LogIn(evt,tmpl);
-
   },
-
 
   "click #button_cancel"() {
     FlowRouter.go("/");
@@ -31,7 +28,6 @@ Template.login.events({
     if (evt.which === 13) {
 
       LogIn(evt,tmpl);
-
     }
   },
 
