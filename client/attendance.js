@@ -6,6 +6,12 @@ Template.attendance_system.helpers({
     //  --->완료
     return Meteor.userId()
   },
+
+  no_login(){
+    alert('로그인이 필요한 기능입니다!')
+    // const move = FlowRouter.go("/login")
+    // return move   // 이동하는 방법을 모르겠네..
+  }
 });
 
 let in_submit = false;
