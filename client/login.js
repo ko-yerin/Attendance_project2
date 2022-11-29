@@ -17,12 +17,12 @@ Template.login.helpers({
 // solution : 함수로 변경하였습니다.
 Template.login.events({
 
-  "click .check"(evt, tmpl) {
+  "click #check"(evt, tmpl) {
     LogIn(evt,tmpl);
   },
 
 
-  "click .button_cancel"() {
+  "click #button_cancel"() {
     FlowRouter.go("/");
   },
 
@@ -52,6 +52,7 @@ Template.login.events({
 function LogIn(event,template){
   const username = template.find("input[name=username]").value;
   const password = template.find("input[name=password]").value;
+  console.log("hey", username, password)
 
   // todo: 값의 유효성 검사는 안하시는 건가요?
   // solution : 이전에 가입되지 않은 사용자이거나 비번이 불일치하면 로그인이 실패되며 비번이나 아이디를 칸에 입력하지 않았을 경우에도 오류가 발생합니다.
@@ -67,6 +68,7 @@ function LogIn(event,template){
         FlowRouter.go("/attendance");
       }
     } else {
+      console.log(error)
       alert("로그인 실패"); // 실패경우 2가지 - 비번 불일치, 사용자 없음
       FlowRouter.go("/login");
     }
