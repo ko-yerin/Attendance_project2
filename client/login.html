@@ -1,69 +1,38 @@
 <template name="login">
-
-  <div>
-    <p>
-      <input type="text" name="username" placeholder="아이디 또는 이메일">
-    </p>
-
-    <p>
-      <input type="{{type_change2}}" name="password" placeholder="비밀번호">
-    </p>
-
-    <!--11.28 추가-->
-    <p>
-      <label><input id="password_check2" type="checkbox">비밀번호 표시</label>
-    </p>
-    <!--11.28 추가-->
-
-    <p>
-      <button class="check">확인</button>
-      <button class="button_cancel">뒤로</button>
-    </p>
-  </div>
-
-<!--    <br /> <br />-->
-<!--    <form class="o-container o-container&#45;&#45;xsmall c-card u-high">-->
-<!--        <header class="c-card__header">-->
-<!--            <h2 class="c-heading">-->
-<!--                Login-->
-<!--                <div class="c-heading__sub">Existing users</div>-->
-<!--            </h2>-->
-<!--        </header>-->
-<!--        <div class="c-card__body">-->
-<!--            <div class="o-form-element">-->
-<!--                <label class="c-label">-->
-<!--                    ID:-->
-<!--                    <input name="username" class="c-field c-field&#45;&#45;label" type="email" placeholder="ID" />-->
-<!--                    <div role="tooltip" class="c-hint">-->
-<!--                        The email used to register the account-->
-<!--                    </div>-->
-<!--                </label>-->
-<!--            </div>-->
-<!--            <label class="o-form-element c-label">-->
-<!--                Password:-->
-<!--                <input  name="password" class="c-field c-field&#45;&#45;label" type="password" />-->
-<!--            </label>-->
-<!--        </div>-->
-<!--        <footer class="c-card__footer">-->
-<!--            <button id="check" type="button" class="c-button c-button&#45;&#45;brand c-button&#45;&#45;block">-->
-<!--                Login-->
-<!--            </button>-->
-<!--            <button id="button_cancel" type="button" class="c-button">-->
-<!--                Sign In-->
-<!--            </button>-->
-<!--        </footer>-->
-<!--    </form>-->
-<!--    <div>-->
-<!--        <p>-->
-<!--            <input type="text" name="username" placeholder="아이디">-->
-<!--        </p>-->
-<!--        <p>-->
-<!--            <input type="password" name="password" placeholder="비번">-->
-<!--        </p>-->
-<!--        <p>-->
-<!--            <button class="check">확인</button>-->
-<!--            <button class="button_cancel">뒤로</button>-->
-<!--        </p>-->
-<!--    </div>-->
+    <br /> <br />
+    <form class="o-container o-container--xsmall c-card u-high">
+        <header class="c-card__header">
+            <h2 class="c-heading">
+                Login
+                <div class="c-heading__sub">Existing users</div>
+            </h2>
+        </header>
+        <div class="c-card__body">
+            <div class="o-form-element">
+                <label class="c-label">
+                    ID:
+                    <input name="username" class="c-field c-field--label" type="text" placeholder="ID" />
+                    <div role="tooltip" class="c-hint">
+                        The email used to register the account
+                    </div>
+                </label>
+            </div>
+            <label class="o-form-element c-label">
+                Password:
+                <input  name="password" class="c-field c-field--label" type="{{type_change2}}" />
+            </label>
+        </div>
+      <p>
+        <label><input id="password_check2" type="checkbox">  비밀번호 표시</label>
+      </p>
+        <footer class="c-card__footer">
+            <button id="check" type="button" class="c-button c-button--brand c-button--block">
+                Login
+            </button>
+            <button id="button_cancel" type="button" class="c-button">
+                Sign In
+            </button>
+        </footer>
+    </form>
 </template>
 
