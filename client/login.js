@@ -1,12 +1,11 @@
-import { FlowRouter } from "meteor/ostrio:flow-router-extra";
+import {FlowRouter} from "meteor/ostrio:flow-router-extra";
 
 // 11.28 추가
 Template.login.helpers({
-  type_change2(){
-    if(Session.get('password_text') === 'password'){
+  type_change2() {
+    if (Session.get('password_text') === 'password') {
       return 'text';
-    }
-    else{
+    } else {
       return 'password';
     }
   }
@@ -17,8 +16,10 @@ Template.login.helpers({
 // solution : 함수로 변경하였습니다.
 Template.login.events({
 
+
   "click #check"(evt, tmpl) {
     LogIn(evt,tmpl);
+
   },
 
 
@@ -35,21 +36,21 @@ Template.login.events({
   },
 
   // 11.28 추가
-  "change [type=checkbox]": function(evt,tmpl){
+  "change [type=checkbox]": function (evt, tmpl) {
     const checkbox = document.getElementById('password_check2')
     const is_checked = checkbox.checked;
 
-    if (is_checked){
+    if (is_checked) {
       Session.set('password_text', 'password')
-    }
-    else{
+    } else {
       Session.set('password_text', 'text')
     }
   }
 });
-  // 11.28 추가
 
-function LogIn(event,template){
+// 11.28 추가
+
+function LogIn(event, template) {
   const username = template.find("input[name=username]").value;
   const password = template.find("input[name=password]").value;
   console.log("hey", username, password)
