@@ -1,17 +1,13 @@
 <template name="admin">
   {{#if isAdmin}}
-<!--  {{> searchAttendanceList}}-->
-<!--  <button id="back" type="button" class="c-button">back</button>-->
 
-
-<!--  ✅ HERE-->
   <p>
-    <input class="c-field" placeholder="Type in Name!" type="text" name="username"/>
+    <label>
+      <input class="c-field" placeholder="Type in Name!" type="text" name="username"/>
+    </label>
     <br />
     <button id="btn-search" type="button" class="c-button c-button--brand">Search</button>
   </p>
-
-
 
   <table class="c-table">
     <thead class="c-table__head">
@@ -55,8 +51,6 @@
 
     {{/if}}
 
-
-
     </tbody>
   </table>
   {{else}} nope
@@ -67,14 +61,6 @@
   <h1>hey</h1>
   {{#if searchName}}
     Nope
-<!--    {{#each searchList}}-->
-
-<!--    {{#if type2}}-->
-<!--      <p>name:{{name}} 😇출근:{{getDate createdAt}}</p>-->
-<!--      {{else}}-->
-<!--      <p>name:{{name}} 😇퇴근:{{getDate createdAt}}</p>-->
-<!--    {{/if}}-->
-<!--    {{/each}}-->
   {{else}}
   {{#each searchList}}
   {{#if type2}}

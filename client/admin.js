@@ -10,16 +10,13 @@ import { Session } from "meteor/session";
 Template.admin.helpers({
   // todo: 사용되고 있다면 어디에 사용하고 있나요? ✅출퇴근 버튼에 사용중입니다 !
   type() {
-    // console.log("this", this.type);
     return this.type === "출근";
   },
   searchName(){
     const searchInput = Session.get("searchInput");
-    console.log(searchInput)
     return !searchInput
   },
   searchList() {
-    // console.log(Session.get("searchInput"));
     const searchInput = Session.get("searchInput");
     return Attendance.find({ name: searchInput });
   },
@@ -35,13 +32,7 @@ Template.admin.helpers({
     // return 세션쓸거임
   },
   isAdmin() {
-    if (Meteor.user().username === "admin") {
-      console.log("ok");
-      return true;
-    } else {
-      console.log("nope");
-      return false;
-    }
+    return Meteor.user().username === "admin";
   },
 });
 
@@ -52,18 +43,12 @@ Template.admin.events({
 
   "click #btn-search": function (event, tmpl) {
     const Input = tmpl.find("input[name=username]").value;
-    // const check = Attendance.find({ name: Input }).fetch();
-    console.log(Input);
 
     Session.set("searchInput", Input);
-    console.log("세션", Session.get("searchInput"));
     tmpl.find("input[name=username]").value = "";
   }, //this, event, instance(tmpl) 이거 세개만 자주씀
 
   "click .delete": function () {
-    console.log("삭제");
-    console.log(this);
-
     Attendance.remove({ _id: this._id });
   },
 });
@@ -74,12 +59,10 @@ Template.searchAttendanceList.helpers({
     return this.type === "출근";
   },
   searchList() {
-    // console.log(Session.get("searchInput"));
     const searchInput = Session.get("searchInput");
     return Attendance.find({ name: searchInput });
   },
   getDate(date) {
-    // console.log("date", date);
     return date?.toLocaleString();
   },
 });
