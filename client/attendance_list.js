@@ -18,6 +18,18 @@ Template.attendance_list.helpers({
   //   현재파일 14번째줄 list 함수 return 값을 통해  createdAt를 랜더시키고 있고
   //   9번째줄 type 함수는 if 문법을 사용해 불리언값에따라 출근퇴근을 구분해주는 역할로
   //   사용되고 있습니다.
+  //   ===
+  //   수정>attendance.html 파일의 8번째줄 attendance_list template 에서
+  //   현재파일 9번째줄 list 함수 return 값을 통해 createdAt를 랜더시키고 있고
+  //   12번째줄 type 함수는 if 문법을 사용해 루프를 통한 각 list 아이템 구성중 type 이라는 불리언값에따라 출근퇴근을 구분해주는 역할로
+  //   사용되고 있습니다.
+  //   ~의 의도는 알고 있었습니다. {{#each some in all }} 과 같이 사용해야 한다고
+  //   첫날 누군가에게 알려드렸는데 공유가 안되는거 같습니다.
+  //   한글: https://meteorjs.kr/styles/blaze-spacebars.html#each
+  //   작업본이지만 참고하고 코드는 수정 바랍니다.
+  //   또한 헬퍼 내에서 this를 사용하면 한달 두달 뒤에 이 this에서 나온 type은 도대체 어디서 나온거야?
+  //   하게 되기 때문에 명확하게 코드를 바꿔야 합니다.
+  //   헬퍼에 파라미터를 전달할 수 있는데 일단 이부분은 수정하기 어려우면 내일(수) 물어봐 주시기 바랍니다.
 
   type() {
     return this.type === "출근";

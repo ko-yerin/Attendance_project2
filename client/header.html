@@ -2,16 +2,10 @@
   <div>
     <h1 id="header-right">
       <a href="/">
-        <!-- todo: 경로에 점 두 개를 찍은 이유를 설명해 주세요. 그리고 퍼블릭 폴더에 넣었을 때에는 템플릿에서 어떻게 경로를 지정해야 할지 수정해주세요.
-              원래 경로를 적어주듯이 현재위치에서 한번나가서 public 디렉토리에 접근해야 된다고 생각했습니다.
-              우선 경로를 적어줄때 public 은 생략가능하다고 알고있어서 아래처럼 적어주는게 맞지 않을까 합니다
-        -->
         <img src="/logo.jpeg" style="width: 120px">
       </a>
 
       {{#if is_login}}
-        <!-- todo: 인라인 스타일은 매우 좋지 않은 습관입니다. 이것을 작성했다는 것은 css를 다룰수 있는 분이 있었다는 것인데 css 파일로 옮겨볼까요?
-              완료-->
         <button id="logout" type="button" class="c-button">logout</button>
       {{else}}
         <button id="login" type="button" class="c-button">login</button>

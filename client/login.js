@@ -12,8 +12,6 @@ Template.login.helpers({
 });
 // 11.28 추가
 
-// todo: 이곳도 중복 코드로 되어 있네요. 이걸 해결하는 방법은 여러가지 입니다. 해결이 필요합니다.
-// solution : 함수로 변경하였습니다.
 Template.login.events({
 
   "click #check"(evt, tmpl) {
@@ -50,8 +48,6 @@ function LogIn(event, template) {
   const password = template.find("input[name=password]").value;
   console.log("hey", username, password)
 
-  // todo: 값의 유효성 검사는 안하시는 건가요?
-  // solution : 이전에 가입되지 않은 사용자이거나 비번이 불일치하면 로그인이 실패되며 비번이나 아이디를 칸에 입력하지 않았을 경우에도 오류가 발생합니다.
   Meteor.loginWithPassword(username, password, function (error) {
     if (!error) {
       const checkAdmin = Meteor.user().username;

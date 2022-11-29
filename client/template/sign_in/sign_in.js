@@ -24,8 +24,6 @@ Template.signin.events({
   },
 
   'keyup input': function (evt, tmpl) {
-    // todo: 맨 위 이벤트 로직과 이곳에서부터의 로직은 동일해보입니다. 프로그래머는 중복코드를 매우 싫어하고, 비효율적이라 생각하는데 더 좋게 고쳐볼 수 있을까요.
-    // solution : 함수로 변경하였습니다.
     if (evt.which === 13) {
       SignIn(evt, tmpl)
     }

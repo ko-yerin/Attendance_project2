@@ -2,8 +2,6 @@ import Attendance from "../lib/collection";
 
 Template.attendance_system.helpers({
   isLogin() {
-    // todo: 한줄로 줄여볼까요?
-    //  --->완료
     return Meteor.userId()
   },
 });
