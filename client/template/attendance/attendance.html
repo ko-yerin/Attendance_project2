@@ -9,14 +9,14 @@
  -->
 <template name="attendance_system">
 
-  {{#if isLogin}}
+  {{#if isLogin }}
     <button class="go_to_work">출근</button>
-    <button class="finish_work">퇴근</button>
+     <button class="finish_wo  rk">퇴근</button>
 
-    {{> attendance_list}}
+    {{> attendance_list }}
 
-  {{else}}
+  {{ else }}
 
-    {{no_login}}
+    {{ no_login }}
   {{/if}}
 </template>

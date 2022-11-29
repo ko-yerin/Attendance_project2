@@ -31,22 +31,23 @@ Template.attendance_list.helpers({
   //   또한 헬퍼 내에서 this를 사용하면 한달 두달 뒤에 이 this에서 나온 type은 도대체 어디서 나온거야?
   //   하게 되기 때문에 명확하게 코드를 바꿔야 합니다.
   //   헬퍼에 파라미터를 전달할 수 있는데 일단 이부분은 수정하기 어려우면 내일(수) 물어봐 주시기 바랍니다.
+  //todo: ---> each 부분 수정완료 했습니다
 
-
-  button_switch(){
-    console.log("state",this.state)
-    return  this.state === "true"
-  },
+  //
+  // button_switch(){
+  //   console.log("state",this.state)
+  //   return  this.state === "true"
+  // },
 
   type() {
-    const db_date = this.createdAt
-    console.log("this", db_date)
+    // const db_date = this.createdAt
+    // console.log("this", db_date)
+    //
+    // const timestamp = new Date();
+    // console.log("timestamp",timestamp)
+    // console.log("state",this.state)
 
-    const timestamp = new Date();
-    console.log("timestamp",timestamp)
-    console.log("state",this.state)
-
-    return this.type === "출근";
+    return item.type === "출근";
   },
 
   list() {
@@ -55,6 +56,8 @@ Template.attendance_list.helpers({
     return Attendance.find(
       {user_id: user?._id},
       {limit: 20, sort: {createdAt: -1}}
+
+
     );
   },
 
