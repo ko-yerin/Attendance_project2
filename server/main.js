@@ -12,6 +12,7 @@ Accounts.validateNewUser(function (user) {
   }
 });
 
+// 11.28 추가
 Accounts.validateNewUser(function (user) {
   if (user.profile.name) {
     return true;
@@ -19,3 +20,14 @@ Accounts.validateNewUser(function (user) {
     throw new Meteor.Error(403, '이름을 입력해주세요!')
   }
 });
+// 11.28 추가
+
+// 11.29 추가
+Accounts.validateNewUser(function (user) {
+  if (user.emails) {
+    return true;
+  } else {
+    throw new Meteor.Error(403, '이메일을 입력해주세요!')
+  }
+});
+// 11.29 추가
