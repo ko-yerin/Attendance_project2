@@ -10,7 +10,7 @@
 
 //외출,복귀
 
-import Attendance from "../lib/collection";
+import Attendance from "../../../lib/collection";
 
 Template.attendance_list.helpers({
   // todo: 사용하지 않는 헬퍼로 보입니다.사용하고 있다면 어디에서 사용하고 있는지 알려주세요.
@@ -18,6 +18,7 @@ Template.attendance_list.helpers({
   //   현재파일 14번째줄 list 함수 return 값을 통해  createdAt를 랜더시키고 있고
   //   9번째줄 type 함수는 if 문법을 사용해 불리언값에따라 출근퇴근을 구분해주는 역할로
   //   사용되고 있습니다.
+
   //   ===
   //   수정>attendance.html 파일의 8번째줄 attendance_list template 에서
   //   현재파일 9번째줄 list 함수 return 값을 통해 createdAt를 랜더시키고 있고
@@ -31,7 +32,20 @@ Template.attendance_list.helpers({
   //   하게 되기 때문에 명확하게 코드를 바꿔야 합니다.
   //   헬퍼에 파라미터를 전달할 수 있는데 일단 이부분은 수정하기 어려우면 내일(수) 물어봐 주시기 바랍니다.
 
+
+  button_switch(){
+    console.log("state",this.state)
+    return  this.state === "true"
+  },
+
   type() {
+    const db_date = this.createdAt
+    console.log("this", db_date)
+
+    const timestamp = new Date();
+    console.log("timestamp",timestamp)
+    console.log("state",this.state)
+
     return this.type === "출근";
   },
 
