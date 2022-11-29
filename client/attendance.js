@@ -44,6 +44,9 @@ Template.attendance_system.helpers({
   },
 });
 
+//버튼 한개로 바꿔!!!!!!!!!
+//업그레이드될꺼
+
 Template.attendance_system.events({
   "click .go_to_work": function () {
     // console.log("출근")

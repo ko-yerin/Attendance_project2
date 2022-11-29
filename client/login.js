@@ -45,6 +45,14 @@ Template.login.events({
     if (evt.which === 13) {
       const username = tmpl.find("input[name=username]").value;
       const password = tmpl.find("input[name=password]").value;
+      console.log(username, password);
+
+
+      //if 문으로 빈 코드 input value 넘어가지않게 막아주세요
+      if(username == ""){alert("빈공간")
+        return
+      };
+
 
       Meteor.loginWithPassword(username, password, function (error) {
         if (!error) {
