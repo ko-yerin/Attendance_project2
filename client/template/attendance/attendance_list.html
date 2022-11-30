@@ -8,19 +8,21 @@
     {{! todo: 이곳에 each를 사용하는 것이 적절할까요? HTML의 문제입니다. 한줄만 고치면 되는데 한번 시도해보는게 좋겠습니다.
           --->tbody 태그 밑으로 옮기는게 맞다고 생각해서 옮겼는데 맞는지 정확히는 모르겠습니다}}
 
-      <tbody>
-    {{#each item in list }}
+
+    {{!list함수안에서 return값을 item변수로 받음}}
+    <tbody>
+    {{#each item in list}}
       <tr>
         {{#if type item.type}}
-          <td class="go_to_work_list">출근:{{ getDate item.createdAt }}</td>
+          <td class="go_to_work_list">출근:{{getDate item.createdAt}}</td>
           <img src="https://cdn-icons-png.flaticon.com/512/5610/5610944.png " width="30" height="30">
-        {{ else }}
-          <td class="finish_work_list">퇴근:{{ getDate item.createdAt }}</td>
+        {{else}}
+          <td class="finish_work_list">퇴근:{{getDate item.createdAt}}</td>
           <img src="https://cdn-icons-png.flaticon.com/512/198/198141.png " width="30" height="30">
         {{/if}}
       </tr>
-    {{/each}}
-      </tbody>
+    {{/each }}
+    </tbody>
 
   </table>
 </template>

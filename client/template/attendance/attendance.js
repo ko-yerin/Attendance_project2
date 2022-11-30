@@ -12,51 +12,35 @@ Template.attendance_system.helpers({
   }
 });
 
-let in_submit = false;
-let out_submit = false;
-
 Template.attendance_system.events({
-  "click .go_to_work": function () {
+  "click .check": function () {
     const user = Meteor.user();
+    let testText = document.getElementById("text");
+    console.log(testText)
 
-    function submit_check() {
-      if (in_submit) {
-        return in_submit;
-      } else {
-        in_submit = true;
-        return false;
-      }
+    if (testText.textContent === "출근") {
+      in_creverse();
+    } else {
+      exit_creverse();
     }
 
-    if (submit_check()) {
-      alert("이미 출근되셨습니다");
-    } else {
+    function in_creverse() {
+      testText.style.color="pink"
+      testText.innerText = "퇴근";
+
       Attendance.insert({
         name: user.username,
         user_id: user._id,
         createdAt: new Date(),
         type: "출근",
-        state: true,
       });
       alert("출근되셨습니다");
     }
-  },
-  "click .finish_work": function () {
 
-    const user = Meteor.user();
+    function exit_creverse() {
+      testText.style.color="lightgreen"
+      testText.innerHTML = "출근";
 
-    function submit_check() {
-      if (out_submit) {
-        return out_submit;
-      } else {
-        out_submit = true;
-        return false;
-      }
-    }
-
-    if (submit_check()) {
-      alert("이미 퇴근되셨습니다");
-    } else {
       Attendance.insert({
         name: user.username,
         user_id: user._id,
@@ -65,5 +49,5 @@ Template.attendance_system.events({
       });
       alert("퇴근되셨습니다");
     }
-  },
+  }
 });

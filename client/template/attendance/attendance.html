@@ -10,13 +10,9 @@
 <template name="attendance_system">
 
   {{#if isLogin }}
-    <button class="go_to_work">출근</button>
-     <button class="finish_wo  rk">퇴근</button>
-
+    <button  id="text" class="check">출근</button>
     {{> attendance_list }}
-
   {{ else }}
-
     {{ no_login }}
   {{/if}}
 </template>
