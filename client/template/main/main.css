@@ -47,12 +47,28 @@ body {
   background-image: url("https://www.cre-verse.io/images/news/news4.jpg");
 }
 
+.check {
+  margin:40px auto;
+  width: 235px;
+  height: 40px;
+  line-height: 40px;
+  border:none;
+  font-weight: bold;
+  color: lightgreen;
+  background-color:royalblue;
+  text-align:center;
+  cursor: pointer;
+
+}
+
 .go_to_work_list {
-  background-color: yellowgreen;
+  padding: 10px;
+  background-color: lightgreen;
 }
 
 .finish_work_list {
-  background-color: indianred;
+  padding: 10px;
+  background-color: pink;
 }
 
 .footer {

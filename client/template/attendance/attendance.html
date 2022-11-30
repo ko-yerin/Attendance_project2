@@ -9,21 +9,13 @@
  -->
 <!-- solution: 수정 완료. 그러나 라우터 훅에 대해서는 공부가 필요
  -->
-
-
 <template name="attendance_system">
 
-  {{#if isLogin}}
-    <button class="go_to_work">출근</button>
-    <button class="finish_work">퇴근</button>
-
-    {{> attendance_list}}
-
-  {{else}}
-
-    <!-- 11.29 수정-->
-    {{no_login}}
-    <!-- 11.29 수정-->
+  {{#if isLogin }}
+    <button  id="text" class="check">출근</button>
+    {{> attendance_list }}
+  {{ else }}
+    {{ no_login }}
 
   {{/if}}
 </template>
