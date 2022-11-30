@@ -10,17 +10,17 @@
 
     {{!list함수안에서 return값을 item변수로 받음}}
     <tbody>
-    {{#each item in list}}
+    {{#each item in list }}
       <tr>
-        {{#if type item.type}}
+        {{#if type item.type }}
           <td class="go_to_work_list">출근:{{getDate item.createdAt}}</td>
           <img src="https://cdn-icons-png.flaticon.com/512/5610/5610944.png " width="30" height="30">
-        {{else}}
+        {{ else }}
           <td class="finish_work_list">퇴근:{{getDate item.createdAt}}</td>
           <img src="https://cdn-icons-png.flaticon.com/512/198/198141.png " width="30" height="30">
         {{/if}}
       </tr>
-    {{/each }}
+    {{/each}}
     </tbody>
   </table>
 </template>
