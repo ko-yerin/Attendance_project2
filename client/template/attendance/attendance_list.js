@@ -34,17 +34,17 @@ Template.attendance_list.helpers({
 
 
   button_switch(){
-    console.log("state",this.state)
+    // console.log("state",this.state)
     return  this.state === "true"
   },
 
   type() {
     const db_date = this.createdAt
-    console.log("this", db_date)
+    // console.log("this", db_date)
 
     const timestamp = new Date();
-    console.log("timestamp",timestamp)
-    console.log("state",this.state)
+    // console.log("timestamp",timestamp)
+    // console.log("state",this.state)
 
     return this.type === "출근";
   },
