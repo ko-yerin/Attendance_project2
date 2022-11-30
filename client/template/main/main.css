@@ -12,7 +12,6 @@ a {
 }
 
 body {
-  padding: 10px;
   font-family: sans-serif;
 }
 
@@ -74,4 +73,12 @@ body {
 .footer {
   position: absolute;
   bottom: 0;
+  position: absolute;
+  height: 60px;
+  width: 100%;
+  padding: 0 25px;
+  line-height: 60px;
+  color: #8a8c8f;
+  border-top: 1px solid #dee5e7;
+  background-color: tomato;
 }
