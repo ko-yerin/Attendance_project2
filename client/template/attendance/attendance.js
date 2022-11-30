@@ -26,7 +26,7 @@ Template.attendance_system.events({
     }
 
     function in_creverse() {
-      testText.style.color="pink"
+      testText.style.color = "pink"
       testText.innerText = "퇴근";
 
       Attendance.insert({
@@ -39,7 +39,7 @@ Template.attendance_system.events({
     }
 
     function exit_creverse() {
-      testText.style.color="lightgreen"
+      testText.style.color = "lightgreen"
       testText.innerHTML = "출근";
 
       Attendance.insert({
