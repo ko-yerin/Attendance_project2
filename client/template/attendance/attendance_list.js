@@ -33,19 +33,7 @@ Template.attendance_list.helpers({
   //   헬퍼에 파라미터를 전달할 수 있는데 일단 이부분은 수정하기 어려우면 내일(수) 물어봐 주시기 바랍니다.
   //todo: ---> 알려주신대로 수정완료 했습니다
 
-  //
-  // button_switch(){
-  //   console.log("state",this.state)
-  //   return  this.state === "true"
-  // },
-
   type(item) {
-    // const db_date = this.createdAt
-    // console.log("this", db_date)
-    //
-    // const timestamp = new Date();
-    // console.log("timestamp",timestamp)
-    // console.log("state",this.state)
     return item === "출근";
   },
 
