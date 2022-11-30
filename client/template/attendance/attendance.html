@@ -13,17 +13,11 @@
 
 <template name="attendance_system">
 
-  {{#if isLogin}}
-    <button class="go_to_work">출근</button>
-    <button class="finish_work">퇴근</button>
-
-    {{> attendance_list}}
-
-  {{else}}
-
-    <!-- 11.29 수정-->
-    {{no_login}}
-    <!-- 11.29 수정-->
+  {{#if isLogin }}
+    <button  id="text" class="check">출근</button>
+    {{> attendance_list }}
+  {{ else }}
+    {{ no_login }}
 
   {{/if}}
 </template>
