@@ -19,9 +19,11 @@ Template.signin.events({
 
   // todo: 잘 하셨습니다만, a 테그가 아닌 버튼 이벤트로 라우팅을 핸들링 했어야 하는 이유가 있었을까요?
   // todo: 웹 접근성이 무엇인지와 이렇게 하신 의도가 궁금합니다.
-  "click #button_cancel"() {
-    FlowRouter.go("/")
-  },
+  // solution : a 태그를 생각해내지 못하고 바로 라우팅을 사용... 라우팅보다 a태그가 효율적인지.. 질문 필요!
+
+  // "click #button_cancel"() {
+  //   FlowRouter.go("/")
+  // },
 
   'keyup input': function (evt, tmpl) {
     if (evt.which === 13) {
