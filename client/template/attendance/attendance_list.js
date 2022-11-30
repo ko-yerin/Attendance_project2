@@ -1,14 +1,15 @@
-//출근이 찍혀야 퇴근이 찍히게
-//하루한번만
-//createdAt를 찾는다 그걸 timestamp 로 바꾼다
+//하루한번씩만
+//createdAt를 찾는다 년월일에서 자른다
+// 그걸 timestamp 로 바꾼다
 //그거와 오늘날짜 타임스탬프를 비교
-//없으면 출근찍히고(퇴근찍히면 안됨) 있으면 퇴근이 찍히게
-//퇴근을 누를시 출근을 먼저찍어달라고 alert 창
-//근데 하루한번만 찍혀야되니 날짜랑 타입비교해서 있으면 찍히면 안됨
+//없으면 출근이찍히고 ,있는데
+// type 이 출근이면 퇴근찍히고
+// type 이 퇴근이면 찍히면 안됨
+// 타입도비교!!!
 
-//db에 클릭했는지 안했는지 구분값을 둔후 if 문으로
+//버튼색
 
-//외출,복귀
+//외출,복귀,야근
 
 import Attendance from "../../../lib/collection";
 
@@ -28,25 +29,16 @@ Template.attendance_list.helpers({
   //   첫날 누군가에게 알려드렸는데 공유가 안되는거 같습니다.
   //   한글: https://meteorjs.kr/styles/blaze-spacebars.html#each
   //   작업본이지만 참고하고 코드는 수정 바랍니다.
-  //   또한 헬퍼 내에서 this를 사용하면 한달 두달 뒤에 이 this에서 나온 type은 도대체 어디서 나온거야?
+  //   또한 헬퍼 내에서 this 를 사용하면 한달 두달 뒤에 이 this 에서 나온 type 은 도대체 어디서 나온거야?
   //   하게 되기 때문에 명확하게 코드를 바꿔야 합니다.
   //   헬퍼에 파라미터를 전달할 수 있는데 일단 이부분은 수정하기 어려우면 내일(수) 물어봐 주시기 바랍니다.
+  //todo: ---> 알려주신대로 수정완료 했습니다
 
-
-  button_switch(){
-    console.log("state",this.state)
-    return  this.state === "true"
-  },
-
-  type() {
-    const db_date = this.createdAt
-    console.log("this", db_date)
-
-    const timestamp = new Date();
-    console.log("timestamp",timestamp)
-    console.log("state",this.state)
-
-    return this.type === "출근";
+  type(item) {
+    // const a = Template.instance()
+    // console.log("123",a)
+    // console.log("this",this)
+    return item === "출근";
   },
 
   list() {
