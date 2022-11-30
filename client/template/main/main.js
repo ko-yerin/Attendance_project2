@@ -22,7 +22,6 @@ FlowRouter.route('/signin', {
   name: 'signin',
   action() {
     BlazeLayout.render('signin');
-    console.log("signin 되니??");
   }
 });
 
@@ -30,7 +29,6 @@ FlowRouter.route('/login', {
   name: 'login',
   action() {
     BlazeLayout.render('login');
-    console.log("login 되니??");
   }
 });
 

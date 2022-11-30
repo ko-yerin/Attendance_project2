@@ -18,9 +18,10 @@ Template.login.events({
     LogIn(evt,tmpl);
   },
 
-  "click #button_cancel"() {
-    FlowRouter.go("/");
-  },
+  // 라우팅말고 a 태그로 변경
+  // "click #button_cancel"() {
+  //   FlowRouter.go("/");
+  // },
 
   "keyup input": function (evt, tmpl) {
     if (evt.which === 13) {
@@ -48,6 +49,14 @@ function LogIn(event, template) {
   const password = template.find("input[name=password]").value;
   console.log("hey", username, password)
 
+  // 11.30 추가
+  // 아이디 또는 패스워드를 입력하지 않은 상태에서 로그인 버튼을 누르면 메서드를 날리는 것을 수정하기 위함
+  if(!(username&&password)){
+    alert('아이디와 패스워드를 입력해주세요!')
+    return
+  }
+  // 11.30 추가
+
   Meteor.loginWithPassword(username, password, function (error) {
     if (!error) {
       const checkAdmin = Meteor.user().username;
@@ -64,5 +73,7 @@ function LogIn(event, template) {
       alert("로그인 실패"); // 실패경우 2가지 - 비번 불일치, 사용자 없음
       FlowRouter.go("/login");
     }
-  })
+})
+
+
 }
