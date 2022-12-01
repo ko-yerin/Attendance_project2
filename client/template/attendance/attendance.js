@@ -1,4 +1,4 @@
-import Attendance from "../../../lib/collection";
+import Attendance from "../../../imports/collections";
 
 Session.set('now', new Date())//초기화작업
 

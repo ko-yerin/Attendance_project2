@@ -11,7 +11,7 @@
 
 //외출,복귀,야근
 
-import Attendance from "../../../lib/collection";
+import Attendance from "../../../imports/collections";
 
 Template.attendance_list.helpers({
   type(item) {

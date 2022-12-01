@@ -1,5 +1,5 @@
 //admin 아이디로 로그인 후에 확인가능
-import  Attendance  from "../../../lib/collection";
+import  Attendance  from "../../../imports/collections";
 import { FlowRouter } from "meteor/ostrio:flow-router-extra";
 import { Session } from "meteor/session";
 

@@ -9,12 +9,14 @@
   },
   "dependencies": {
     "@babel/runtime": "^7.17.9",
-    "bootstrap": "^4.6.2",
+    "bootstrap": "^5.2.3",
     "jquery": "^3.6.0",
     "meteor-node-stubs": "^1.2.1"
   },
   "meteor": {
-    "mainModule": {},
+    "mainModule": {
+      "server": "server/main.js"
+    },
     "testModule": "tests/main.js"
   }
 }
