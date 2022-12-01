@@ -11,11 +11,11 @@
  -->
 <template name="attendance_system">
 
-  {{#if isLogin }}
+  {{ #if currentUser }}
     <button  id="text" class="check">출근</button>
     {{> attendance_list }}
-  {{ else }}
-    {{ no_login }}
+<!--  {{ else }}-->
+<!--    {{ no_login }}-->
 
   {{/if}}
 </template>

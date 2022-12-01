@@ -14,6 +14,7 @@ a {
 body {
   font-family: sans-serif;
 }
+
 .c-paragraph{
   font-weight: lighter;
 }
@@ -58,17 +59,53 @@ body {
 }
 
 .check {
-  margin:40px auto;
   width: 235px;
   height: 40px;
   line-height: 40px;
   border:none;
   font-weight: bold;
-  color: lightgreen;
-  background-color:royalblue;
+  color: white;
+  background-color:rebeccapurple;
   text-align:center;
   cursor: pointer;
 
+}
+
+.cancel{
+  margin: 40px;
+  width: 235px;
+  height: 40px;
+  line-height: 40px;
+  border:none;
+  font-weight: bold;
+  color: white;
+  background-color:rebeccapurple;
+  text-align:center;
+  cursor: pointer;
+}
+
+.sign{
+  width: 235px;
+  height: 40px;
+  line-height: 40px;
+  border:none;
+  font-weight: bold;
+  color: white;
+  background-color:rebeccapurple;
+  text-align:center;
+  cursor: pointer;
+}
+
+.cancel2{
+  width: 235px;
+  height: 40px;
+  line-height: 40px;
+  border:none;
+  font-weight: bold;
+  color: white;
+  background-color:rebeccapurple;
+  text-align:center;
+  cursor: pointer;
 }
 
 .go_to_work_list {
@@ -81,21 +118,34 @@ body {
   background-color: pink;
 }
 
+.go_homepage{
+  width: 235px;
+  margin : auto;
+  display: block;
+  height: 40px;
+  line-height: 40px;
+  border:none;
+  font-weight: bold;
+  color: white;
+  background-color:rebeccapurple;
+  text-align:center;
+  cursor: pointer;
+}
+
 .footer {
   position: absolute;
   bottom: 0;
-  position: absolute;
-  height: 60px;
+  height: 165px;
   width: 100%;
-  padding: 0 25px;
-  line-height: 60px;
-  color: #8a8c8f;
+  padding: 0 15px;
+  line-height: 30px;
+  color: white;
   border-top: 1px solid #dee5e7;
-  background-color: tomato;
+  background-color: rebeccapurple;
 }
 
 .loading{
-  margin-top: 200px;
+  margin-top: 150px;
   display: flex;
   font-size: 40px;
   justify-content: center;

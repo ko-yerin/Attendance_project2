@@ -1,18 +1,5 @@
 import Attendance from "../../../lib/collection";
 
-Template.attendance_system.helpers({
-  isLogin() {
-    return Meteor.userId()
-  },
-
-  no_login() {
-    alert('로그인이 필요한 기능입니다!')
-    history.back();  // 11.29 수정.. (그냥 검색해서 찾아낸..라우터 훅?에 대해서는 다시 공부필요)
-    // const move = FlowRouter.go("/login")
-    // return move   // 이동하는 방법을 모르겠네..
-  }
-});
-
 Template.attendance_system.events({
   "click .check": function () {
     const user = Meteor.user();

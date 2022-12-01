@@ -1,21 +1,23 @@
 <template name="login">
-  <br/> <br/>
+  <br/>
 
-    <h1>Login</h1>
+  <h1 style="margin-left: 10px">Login</h1>
+  <p style="margin-left: 10px">ID:
+    <input name="username"  type="text" placeholder="아이디 또는 이메일" style="margin-left: 10px"/>
+  </p>
 
-        ID:
-        <input name="username"  type="text" placeholder="ID"/>
-        Password:
-        <input name="password" type="{{type_change2}}"/>
-        <p>
-          <label><input id="password_check2" type="checkbox"> 비밀번호 표시</label>
-        </p>
-        <button class="check" type="button" >
-          Login
-        </button>
-             <a href="/" type="button" >
-                Cancel
-              </a>
+  <p style="margin-left: 10px">Password:
+    <input name="password" type="{{type_change2}}" placeholder="비밀번호" style="margin-left: 10px"/>
+  </p>
+  <p>
+    <label><input id="password_check2" type="checkbox" style="margin-left: 10px"> 비밀번호 표시</label>
+  </p>
+  <button class="check" type="button" style="margin-left: 10px">
+    Login
+  </button>
+  <a href="/" class='cancel' type="button" style="margin-left: 10px">
+    Cancel
+  </a>
 
 </template>
 
