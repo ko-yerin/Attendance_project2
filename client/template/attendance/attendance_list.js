@@ -34,8 +34,8 @@ Template.attendance_list.helpers({
   },
 
   getPagination(){
-    console.log("totalCount",totalCount)
-    return totalCount;
+    // console.log("totalCount",totalCount)
+    // return totalCount;
   }
 });
 

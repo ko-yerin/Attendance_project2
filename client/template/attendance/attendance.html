@@ -12,8 +12,8 @@
 <template name="attendance_system">
 
   {{#if isLogin }}
-    <button  id="text" class="check">{{출퇴근}}</button>
-    <button id="last_deleted">삭제</button>
+    <button  id="text" style="background-color: {{출퇴근색깔}};" class="check">{{출퇴근}}</button>
+    <button id="last_deleted" disabled="{{isDisabled}}">삭제</button>
     {{> attendance_list }}
   {{ else }}
     {{ no_login }}
