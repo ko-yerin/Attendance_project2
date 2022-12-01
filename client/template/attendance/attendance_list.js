@@ -15,9 +15,6 @@ import Attendance from "../../../lib/collection";
 
 Template.attendance_list.helpers({
   type(item) {
-    // const a = Template.instance()
-    // console.log("123",a)
-    // console.log("this",this)
     return item === "출근";
   },
 
@@ -33,10 +30,10 @@ Template.attendance_list.helpers({
     return date?.toLocaleString();
   },
 
-  getPagination(){
-    console.log("totalCount",totalCount)
-    return totalCount;
-  }
+  // getPagination(){
+  //   console.log("totalCount",totalCount)
+  //   return totalCount;
+  // }
 });
 
 Template.attendance_list.events({
@@ -44,7 +41,7 @@ Template.attendance_list.events({
     const user = Meteor.user()
     let pageText = document.getElementById("page_button")
     let pageInnerText = pageText.innerText//현재 페이지//1
-    let getDataCount = Attendance.find({name:user.username}).count();//데이터숫자//16
+    let getDataCount = Attendance.find({name: user.username}).count();//데이터숫자//16
 
     function pagination(totalData, currentPage) {//16   1
 
@@ -86,6 +83,7 @@ Template.attendance_list.events({
       //totalcount 수 만큼 버튼을 만들어야한
 
     }
+
     pagination(getDataCount, pageInnerText)
   }
 })

@@ -1,10 +1,50 @@
 import Attendance from "../../../lib/collection";
 
+Session.set('now', new Date())//초기화작업
+
+//oncreated를 안쓰면 문서를 다 읽기전 실행
+//쓰면 문서 읽은후 실행
+Template.attendance_system.onCreated(function () {
+  alert("출퇴근후 1시간이내에만 삭제가 가능합니다")
+  Meteor.setInterval(function () {
+    Session.set('now', new Date())
+  }, 1000)
+})
+//isdisabled()를 실행시켜야해서 (===1시간지낫는지 안지낫는지 게속 확인해야됨)
+//1초마다 한번씩 new Date()값을 받아오기위해 위코드처럼 작성
+
 Template.attendance_system.helpers({
-  출퇴근(){
-    const user = Meteor.user();
-    Attendance.find({user_id:user._id},{sort:{createdAt:-1}})
+  isdisabled() {
+    //몽고디비 마지막시간과 현재시간을 비교해 1시간이상차이나면 버튼을 막음
+    //우선 확인을 위해 3초로 하겠음
+    const attendance = Attendance.findOne({user_id: Meteor?.userId()}, {sort: {createdAt: -1}})
+    const last_data = attendance.createdAt
+    const now = Session.get('now')
+
+    if (!attendance) {
+      return true
+    } else {
+      return now - last_data > 3000;
+    }
+  },//1시간 === 3600000
+
+  attendance_button() {
+    const attendance = Attendance.findOne({user_id: Meteor.userId()}, {sort: {createdAt: -1}})
+    if (attendance?.type === "출근") {
+      return "퇴근"
+    } else {
+      return "출근"
+    }
   },
+  button_color() {
+    const attendance = Attendance.findOne({user_id: Meteor.userId()}, {sort: {createdAt: -1}})
+    if (attendance?.type === "출근") {
+      return "pink"
+    } else {
+      return "lightgreen"
+    }
+  },
+
   isLogin() {
     return Meteor.userId()
   },
@@ -15,38 +55,14 @@ Template.attendance_system.helpers({
     // const move = FlowRouter.go("/login")
     // return move   // 이동하는 방법을 모르겠네..
   }
-
 });
 
 Template.attendance_system.events({
   "click .check": function () {
     const user = Meteor.user();
-    let testText = document.getElementById("text");
-    console.log(testText)
+    const attendance = Attendance.findOne({user_id: Meteor.userId()}, {sort: {createdAt: -1}})
 
-    if (testText.textContent === "출근") {
-      in_creverse();
-    } else {
-      exit_creverse();
-    }
-
-    function in_creverse() {
-      testText.style.color = "pink"
-      testText.innerText = "퇴근";
-
-      Attendance.insert({
-        name: user.username,
-        user_id: user._id,
-        createdAt: new Date(),
-        type: "출근",
-      });
-      alert("출근되셨습니다");
-    }
-
-    function exit_creverse() {
-      testText.style.color = "lightgreen"
-      testText.innerHTML = "출근";
-
+    if (attendance?.type === "출근") {
       Attendance.insert({
         name: user.username,
         user_id: user._id,//유저의 고유한 아디
@@ -54,25 +70,23 @@ Template.attendance_system.events({
         type: "퇴근",
       });
       alert("퇴근되셨습니다");
+
+      return "퇴근"
+    } else {
+      Attendance.insert({
+        name: user.username,
+        user_id: user._id,
+        createdAt: new Date(),
+        type: "출근",
+      });
+      alert("출근되셨습니다");
+
+      return "출근"
     }
+
   },
-  "click #last_deleted":function(){
-    const user = Meteor.user();
-    const target = document.getElementById("last_deleted");
-
-    if(target.disabled === false){
-      setTimeout(()=>{
-        target.disabled === true
-        alert("출퇴근후 1시간이후에는 삭제가 불가")
-      },3000)
-    }
-
-    const AttendanceId = Attendance.findOne({user_id:user._id},{sort:{createdAt: -1}})._id
+  "click .delete_button": function () {
+    const AttendanceId = Attendance.findOne({user_id: Meteor?.userId()}, {sort: {createdAt: -1}})._id
     Attendance.remove({_id: AttendanceId})
-
-    target.disabled = true;
-
-
-
   }
 });
