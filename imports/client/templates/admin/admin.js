@@ -1,5 +1,6 @@
+import './admin.html'
 //admin 아이디로 로그인 후에 확인가능
-import  Attendance  from "../../../imports/collections";
+import  Attendance  from "/imports/collections";
 import { FlowRouter } from "meteor/ostrio:flow-router-extra";
 import { Session } from "meteor/session";
 
@@ -19,6 +20,9 @@ Template.admin.helpers({
   },
 
   list() {
+    // todo - 왜 이 템플릿에서만 리스트가 0개가 조회되죠;; 이상하네요
+    //  됐다 안됐다 그러는데 왜 그러는걸까요;;;;
+    //  제 컴에서만 그러는게 아니면 본부장님께 도움을 받아봐야 겠는데요
     return Attendance.find({});
   },
 
@@ -68,6 +72,7 @@ Template.admin.events({
   }
 });
 
+// todo - 이건 어디에 쓰이나요?
 Template.searchAttendanceList.helpers({
   type2() {
     console.log("this", this.type);

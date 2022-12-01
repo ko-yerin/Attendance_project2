@@ -1,3 +1,4 @@
+import './attendance_list.html'
 //하루한번씩만
 //createdAt를 찾는다 년월일에서 자른다
 // 그걸 timestamp 로 바꾼다
@@ -11,7 +12,7 @@
 
 //외출,복귀,야근
 
-import Attendance from "../../../imports/collections";
+import Attendance from "/imports/collections";
 
 Template.attendance_list.helpers({
   type(item) {

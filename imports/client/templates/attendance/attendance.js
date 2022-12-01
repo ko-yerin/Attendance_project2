@@ -1,4 +1,5 @@
-import Attendance from "../../../imports/collections";
+import './attendance.html'
+import Attendance from "/imports/collections";
 
 Session.set('now', new Date())//초기화작업
 

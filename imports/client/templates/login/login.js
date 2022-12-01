@@ -49,6 +49,7 @@ function LogIn(event, template) {
   const username = template.find("input[name=username]").value;
   const password = template.find("input[name=password]").value;
   console.log("hey", username, password)
+  // todo - 로그에 로그인 정보를 남기면...
 
   // 11.30 추가
   // 아이디 또는 패스워드를 입력하지 않은 상태에서 로그인 버튼을 누르면 메서드를 날리는 것을 수정하기 위함
