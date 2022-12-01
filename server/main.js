@@ -1,4 +1,6 @@
 import {Meteor} from 'meteor/meteor';
+import Attendance from "/lib/collection";
+import "/imports/api/method.js"
 
 Meteor.startup(() => {
 
@@ -22,3 +24,11 @@ Accounts.validateNewUser(function (user) {
   }
 });
 // 11.29 수정
+
+Meteor.publish('Attendance',function(){
+  return Attendance.find(Meteor.userId())
+});
+
+Meteor.publish('test',function(){
+  return Attendance.find()
+});

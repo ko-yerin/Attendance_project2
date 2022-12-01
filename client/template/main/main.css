@@ -13,7 +13,7 @@ a {
 }
 
 body {
-  padding: 10px;
+  /*height: 100%;*/
   font-family: sans-serif;
 }
 
@@ -33,6 +33,42 @@ body {
   /*width: 500px;*/
 }
 
+body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+}
+main {
+  margin: 0 auto;
+  flex:1;
+  max-width: 80ch;
+}
+.button{
+  display: inline-block;
+  padding: 8px 15px;
+  font-size: 24px;
+  cursor : pointer;
+  text-align: center;
+  text-decoration: none;
+  outline:none;
+  color:#fff;
+  background-color: black;
+  border:none;
+  border-radius: 15px;
+  box-shadow: 0 9px #999;
+}
+.button:hover {background-color: black}
+
+.button:active {
+  background-color: black;
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+}
+
+.c-paragraph{
+  font-weight: lighter;
+}
 
 #back {
   background: bisque;
@@ -56,25 +92,72 @@ body {
   align-items: center;
 }
 
-/*#header-right {*/
-/*  font-weight: bold;*/
-/*  background-color: #bbbbbb;*/
-/*  font-size: 21px;*/
-/*  color: white;*/
-/*  padding: 20px;*/
-/*  background-image: url("https://www.cre-verse.io/images/news/news4.jpg");*/
-/*}*/
+#header-right {
+  opacity: 1.2;
+  font-weight: bold;
+  background-color: #bbbbbb;
+  font-size: 21px;
+  color: white;
+  padding: 20px;
+  background: linear-gradient(
+      to left,
+      rgba(20, 20, 20, 0) 10%,
+      rgba(20, 20, 20, 0.25) 25%,
+      rgba(20, 20, 20, 0.5) 50%,
+      rgba(20, 20, 20, 0.75) 75%,
+      rgba(20, 20, 20, 1) 100%
+  ), url("https://www.cre-verse.io/images/news/news4.jpg");
+  /*background-image: url("https://www.cre-verse.io/images/news/news4.jpg");*/
+}
 
 .check {
-  margin:40px auto;
   width: 235px;
   height: 40px;
   line-height: 40px;
   border:none;
   font-weight: bold;
+  color: white;
+  background-color:rebeccapurple;
   text-align:center;
   cursor: pointer;
 
+}
+
+.cancel{
+  margin: 40px;
+  width: 235px;
+  height: 40px;
+  line-height: 40px;
+  border:none;
+  font-weight: bold;
+  color: white;
+  background-color:rebeccapurple;
+  text-align:center;
+  cursor: pointer;
+}
+
+.sign{
+  width: 235px;
+  height: 40px;
+  line-height: 40px;
+  border:none;
+  font-weight: bold;
+  color: white;
+  background-color:rebeccapurple;
+  text-align:center;
+  cursor: pointer;
+}
+
+.cancel2{
+  width: 235px;
+  height: 40px;
+  line-height: 40px;
+  border:none;
+  font-weight: bold;
+  color: white;
+  background-color:rebeccapurple;
+  text-align:center;
+  cursor: pointer;
 }
 
 .go_to_work_list {
@@ -87,7 +170,35 @@ body {
   background-color: pink;
 }
 
+.go_homepage{
+  width: 235px;
+  margin : auto;
+  display: block;
+  height: 40px;
+  line-height: 40px;
+  border:none;
+  font-weight: bold;
+  color: white;
+  background-color:rebeccapurple;
+  text-align:center;
+  cursor: pointer;
+}
+
 .footer {
   position: absolute;
   bottom: 0;
+  height: 165px;
+  width: 100%;
+  padding: 0 15px;
+  line-height: 30px;
+  color: white;
+  border-top: 1px solid #dee5e7;
+  background-color: rebeccapurple;
+}
+
+.loading{
+  margin-top: 150px;
+  display: flex;
+  font-size: 40px;
+  justify-content: center;
 }

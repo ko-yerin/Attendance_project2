@@ -1,59 +1,21 @@
 <template name="signin">
 
-  <div>
-    <br/><br/><br/>
-    <form class="o-container o-container--xsmall c-card u-high">
-      <header class="c-card__header">
-        <h2 class="c-heading">
-          Sign In
-          <div class="c-heading__sub">New users</div>
-        </h2>
-      </header>
-      <div class="c-card__body">
-        <div class="o-form-element">
-          <label class="c-label">
-            ID:
-            <input name="username" class="c-field c-field--label" type="text" placeholder="your@email.com"/>
-            <div role="tooltip" class="c-hint">
-              The email used to register the account
-            </div>
-          </label>
-        </div>
-        <label class="o-form-element c-label">
-          Email:
-          <input name="email" class="c-field c-field--label" type="Email"/>
-        </label>
-        <label class="o-form-element c-label">
-          Name:
-          <input name="name" class="c-field c-field--label" type="text"/>
-        </label>
-        <label class="o-form-element c-label">
-          Password:
-          <input name="password" type="{{type_change}}" class="c-field c-field--label"/>
-        </label>
-        <label class="o-form-element c-label">
-          Password Check:
-          <input name="password2" type="{{type_change}}" class="c-field c-field--label"/>
-        </label>
-        <div class="o-form-element">
-        </div>
-      </div>
+    <h2 style="margin-left: 10px">Sign In</h2>
+    <p style="margin-left: 10px">ID:<input name="username" type="text" placeholder="아이디" style="margin-left: 10px"/></p>
+    <p style="margin-left: 10px">E-mail:<input name="email" type="Email" placeholder="이메일" style="margin-left: 10px"/></p>
+    <p style="margin-left: 10px">Name:<input name="name" type="text" placeholder="이름" style="margin-left: 10px"/></p>
+    <p style="margin-left: 10px">Password:<input name="password" type="{{type_change}}" placeholder="비밀번호" style="margin-left: 10px"/></p>
+    <p style="margin-left: 10px">Password Check:<input name="password2" type="{{type_change}}" placeholder="비밀번호 확인" style="margin-left: 10px"/></p>
+
       <p>
-        <label><input id="password_check" type="checkbox">비밀번호 표시</label>
+        <label><input id="password_check" type="checkbox" style="margin-left: 10px">비밀번호 표시</label>
       </p>
-      <footer class="c-card__footer">
-        <button id="button_sign" type="button" class="c-button c-button--brand c-button--block">
+        <button id="button_sign" class="sign">
           Sign in
         </button>
-
-        <!-- 11.29 수정 -->
-        <a href="/" type="button" class="c-button c-button--block">
+        <a href="/" class='cancel2' type="button" >
           Cancel
         </a>
-        <!-- 11.29 수정 -->
 
-      </footer>
-    </form>
-  </div>
 
 </template>

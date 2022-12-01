@@ -17,7 +17,6 @@ Template.attendance_list.helpers({
   type(item) {
     return item === "출근";
   },
-
   list() {
     const user = Meteor.user();
     return Attendance.find(
