@@ -1,5 +1,6 @@
 import {FlowRouter} from "meteor/ostrio:flow-router-extra";
 
+// FlowRouter.template {'/', 'layout', { header: 'header'}}
 // 11.28 추가
 Template.home.events({
   "click .go_attendance": function () {
