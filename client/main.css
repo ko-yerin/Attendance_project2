@@ -107,6 +107,7 @@ main {
       rgba(20, 20, 20, 0.75) 75%,
       rgba(20, 20, 20, 1) 100%
   ), url("https://www.cre-verse.io/images/news/news4.jpg");
+  /* todo - 왜 배경 이미지가 안나오죠.... */
   /*background-image: url("https://www.cre-verse.io/images/news/news4.jpg");*/
 }
 

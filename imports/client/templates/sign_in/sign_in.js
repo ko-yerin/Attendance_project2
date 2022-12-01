@@ -1,4 +1,5 @@
-import {FlowRouter} from "meteor/ostrio:flow-router-extra";
+import './sign_in.html'
+import { FlowRouter } from "meteor/ostrio:flow-router-extra";
 
 // 11.28 추가
 Template.signin.helpers({

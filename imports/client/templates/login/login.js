@@ -1,4 +1,5 @@
-import {FlowRouter} from "meteor/ostrio:flow-router-extra";
+import './login.html'
+import { FlowRouter } from "meteor/ostrio:flow-router-extra";
 
 // 11.28 추가
 Template.login.helpers({
@@ -58,6 +59,7 @@ function LogIn(event, template) {
   // 11.30 추가
 
   Meteor.loginWithPassword(username, password, function (error) {
+    // todo - 코드를 좀 더 깔끔하게 바꿀수 있는지 고민해봅시다.
     if (!error) {
       const checkAdmin = Meteor.user().username;
 
@@ -71,6 +73,7 @@ function LogIn(event, template) {
     } else {
       console.log(error)
       alert("로그인 실패"); // 실패경우 2가지 - 비번 불일치, 사용자 없음
+      // todo - 아래 코드는 필요한 부분일까요?
       FlowRouter.go("/login");
     }
 })
