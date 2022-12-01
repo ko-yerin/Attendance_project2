@@ -1,5 +1,6 @@
 import {Meteor} from 'meteor/meteor';
 import Attendance from "/lib/collection";
+import "/imports/api/method.js"
 
 Meteor.startup(() => {
 });

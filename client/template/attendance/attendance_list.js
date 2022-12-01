@@ -35,19 +35,41 @@ Template.attendance_list.helpers({
   //todo: ---> 알려주신대로 수정완료 했습니다
 
   type(item) {
-    // const a = Template.instance()
-    // console.log("123",a)
-    // console.log("this",this)
     return item === "출근";
   },
-
   list() {
-    const user = Meteor.user();
+    //게시판 형식 넣어주세요 !! 🚀
 
-    return Attendance.find(
-      {user_id: user?._id},
-      {limit: 20, sort: {createdAt: -1}}
-    );
+
+    // const user = Meteor.user();
+    const AttendanceFind =  Attendance.find()
+    const total = AttendanceFind.count()
+    const data =  Attendance.find({},{sort:{createdAt:-1},limit:15}) //data를 다물러놓고 작업 시작하기
+    console.log(data)
+    if(AttendanceFind !== 0){
+      // console.log('check', AttendanceFind.count())
+      // console.log(hidePost)
+      // const total = AttendanceFind.count()
+      console.log(total)
+      const totalPage = Math.ceil(total/10)
+      // console.log("totalPage", totalPage)
+      const pageCount = 5
+
+      //세션으로 옵션 바꾸기
+
+      for (let i = 1; i <= 20; i++) {
+        console.log(i) //페이지만들어주기
+      }
+
+      const maxPost = 10; //게시페이지 수
+      return data // skip:10
+      // return Attendance.find().limit(10)
+
+      //변수 저장완료 페이지네이션 !!
+    }
+
+
+
   },
 
   getDate(date) {
