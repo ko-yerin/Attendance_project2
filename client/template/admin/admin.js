@@ -48,6 +48,17 @@ Template.admin.events({
     tmpl.find("input[name=username]").value = "";
   }, //this, event, instance(tmpl) 이거 세개만 자주씀
 
+  // 12.1 수정
+  "keyup input": function (evt, tmpl) {
+    if (evt.which === 13) {
+      const Input = tmpl.find("input[name=username]").value;
+
+      Session.set("searchInput", Input);
+      tmpl.find("input[name=username]").value = "";
+    }
+  },
+  // 12.1 수정
+
   "click .delete": function () {
     Attendance.remove({ _id: this._id });
   },
