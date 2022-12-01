@@ -1,8 +1,9 @@
 <template name="layout">
   {{ > header}}
+  <div class="main">
   {{ > yield}}
   <!--  {{> yield "tryYield"}}-->
   <!--  {{ > yield region='login'}}-->
-
+  </div>
   {{ > footer}}
 </template>
