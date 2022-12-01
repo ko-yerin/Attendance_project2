@@ -1,10 +1,15 @@
 <template name="header">
-  <div>
-    <h1 id="header-right">
+  <div id="wrap">
+    <h1>
       <a href="/">
         <img src="/creverse_logo.png" style="width: 120px">
       </a>
+    </h1>
 
+    <h3 id="main_text">
+      출퇴근관리 사이트
+    </h3>
+    <ul class="main_button">
       {{#if is_login}}
         <button id="logout" type="button" class="button">logout</button>
       {{else}}

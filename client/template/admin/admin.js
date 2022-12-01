@@ -62,6 +62,10 @@ Template.admin.events({
   "click .delete": function () {
     Attendance.remove({ _id: this._id });
   },
+
+  "click .delete_all" : function () {
+    Attendance.remove({});
+  }
 });
 
 Template.searchAttendanceList.helpers({

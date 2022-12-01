@@ -1,6 +1,7 @@
 * {
   margin: 0;
   padding: 0;
+
 }
 
 ul, li {
@@ -14,6 +15,22 @@ a {
 body {
   /*height: 100%;*/
   font-family: sans-serif;
+}
+
+#wrap {
+  width: 100%;
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+  background-color:skyblue;
+}
+
+#wrap > h1 {
+  /*width: 5000px;*/
+}
+
+#wrap > h3 {
+  /*width: 500px;*/
 }
 
 body {
@@ -52,6 +69,7 @@ main {
 .c-paragraph{
   font-weight: lighter;
 }
+
 #back {
   background: bisque;
 }

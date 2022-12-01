@@ -5,9 +5,6 @@
       <th>출퇴근</th>
     </tr>
     </thead>
-    {{! todo: 이곳에 each를 사용하는 것이 적절할까요? HTML의 문제입니다. 한줄만 고치면 되는데 한번 시도해보는게 좋겠습니다.
-          --->tbody 태그 밑으로 옮기는게 맞다고 생각해서 옮겼는데 맞는지 정확히는 모르겠습니다}}
-
     {{!list함수안에서 return값을 item변수로 받음}}
     <tbody>
     {{#each item in list }}
@@ -23,4 +20,16 @@
     {{/each}}
     </tbody>
   </table>
+  <div>
+    <button id="page_button">1</button>
+    <ul>
+      {{#each getPagination}}
+        <li>
+          <button>
+            {{totalCount}}
+          </button>
+        </li>
+      {{/each}}
+    </ul>
+  </div>
 </template>

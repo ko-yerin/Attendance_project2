@@ -10,12 +10,11 @@
 <!-- solution: 수정 완료. 그러나 라우터 훅에 대해서는 공부가 필요
  -->
 <template name="attendance_system">
-
-  {{ #if currentUser }}
-    <button  id="text" class="check">출근</button>
+  {{#if isLogin }}
+    <button style="background-color:{{button_color}}" class="check">{{attendance_button}}</button>
+    <button class="delete_button" disabled="{{isdisabled}}">삭제</button>
     {{> attendance_list }}
-<!--  {{ else }}-->
-<!--    {{ no_login }}-->
-
+  {{ else }}
+    {{ no_login }}
   {{/if}}
 </template>
