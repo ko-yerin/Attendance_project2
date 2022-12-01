@@ -1,42 +1,21 @@
 <template name="login">
   <br/> <br/>
-  <form class="o-container o-container--xsmall c-card u-high">
-    <header class="c-card__header">
-      <h2 class="c-heading">
-        Login
-        <div class="c-heading__sub">Existing users</div>
-      </h2>
-    </header>
-    <div class="c-card__body">
-      <div class="o-form-element">
-        <label class="c-label">
-          ID:
-          <input name="username" class="c-field c-field--label" type="text" placeholder="ID"/>
-          <div role="tooltip" class="c-hint">
-            The email used to register the account
-          </div>
-        </label>
-      </div>
-      <label class="o-form-element c-label">
+
+    <h1>Login</h1>
+
+        ID:
+        <input name="username"  type="text" placeholder="ID"/>
         Password:
-        <input name="password" class="c-field c-field--label" type="{{type_change2}}"/>
-      </label>
-    </div>
-    <p>
-      <label><input id="password_check2" type="checkbox"> 비밀번호 표시</label>
-    </p>
-    <footer class="c-card__footer">
-      <button id="check" type="button" class="c-button c-button--brand c-button--block">
-        Login
-      </button>
+        <input name="password" type="{{type_change2}}"/>
+        <p>
+          <label><input id="password_check2" type="checkbox"> 비밀번호 표시</label>
+        </p>
+        <button class="check" type="button" >
+          Login
+        </button>
+             <a href="/" type="button" >
+                Cancel
+              </a>
 
-      <!--11.30 수정-->
-      <a href="/" type="button" class="c-button c-button--block">
-        Cancel
-      </a>
-      <!--11.30 수정-->
-
-    </footer>
-  </form>
 </template>
 
