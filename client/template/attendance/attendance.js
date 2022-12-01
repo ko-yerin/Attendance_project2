@@ -1,6 +1,10 @@
 import Attendance from "../../../lib/collection";
 
 Template.attendance_system.helpers({
+  출퇴근(){
+    const user = Meteor.user();
+    Attendance.find({user_id:user._id},{sort:{createdAt:-1}})
+  },
   isLogin() {
     return Meteor.userId()
   },
@@ -11,6 +15,7 @@ Template.attendance_system.helpers({
     // const move = FlowRouter.go("/login")
     // return move   // 이동하는 방법을 모르겠네..
   }
+
 });
 
 Template.attendance_system.events({
@@ -44,11 +49,30 @@ Template.attendance_system.events({
 
       Attendance.insert({
         name: user.username,
-        user_id: user._id,
+        user_id: user._id,//유저의 고유한 아디
         createdAt: new Date(),
         type: "퇴근",
       });
       alert("퇴근되셨습니다");
     }
+  },
+  "click #last_deleted":function(){
+    const user = Meteor.user();
+    const target = document.getElementById("last_deleted");
+
+    if(target.disabled === false){
+      setTimeout(()=>{
+        target.disabled === true
+        alert("출퇴근후 1시간이후에는 삭제가 불가")
+      },3000)
+    }
+
+    const AttendanceId = Attendance.findOne({user_id:user._id},{sort:{createdAt: -1}})._id
+    Attendance.remove({_id: AttendanceId})
+
+    target.disabled = true;
+
+
+
   }
 });

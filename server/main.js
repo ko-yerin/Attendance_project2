@@ -1,6 +1,7 @@
 import {Meteor} from 'meteor/meteor';
 
 Meteor.startup(() => {
+
 });
 
 //가입정보 정합성 확인하기

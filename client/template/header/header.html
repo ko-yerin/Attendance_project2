@@ -1,21 +1,27 @@
 <template name="header">
-  <div>
-    <h1 id="header-right">
+  <div id="wrap">
+    <h1>
       <a href="/">
-        <img src="/logo.jpeg" style="width: 120px">
+        <img src="/creverse_logo.png" style="width: 120px">
       </a>
-
-      {{#if is_login}}
-        <button id="logout" type="button" class="c-button">logout</button>
-      {{else}}
-        <button id="login" type="button" class="c-button">login</button>
-        <button id="signin" type="button" class="c-button">signin</button>
-      {{/if}}
-
-      <h2>Attendance</h2>
-      <p class="c-paragraph">
-        CREVERSE is having NFT market and Wallet with Metaverse
-      </p>
     </h1>
+
+    <h3 id="main_text">
+      출퇴근관리 사이트
+    </h3>
+    <ul class="main_button">
+      {{#if is_login}}
+        <li>
+          <button id="logout" type="button">logout</button>
+        </li>
+      {{else}}
+        <li>
+          <button id="login" type="button">login</button>
+        </li>
+        <li>
+          <button id="signin" type="button">signin</button>
+        </li>
+      {{/if}}
+    </ul>
   </div>
 </template>

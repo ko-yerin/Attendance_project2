@@ -1,6 +1,7 @@
 * {
   margin: 0;
   padding: 0;
+
 }
 
 ul, li {
@@ -15,6 +16,23 @@ body {
   padding: 10px;
   font-family: sans-serif;
 }
+
+#wrap {
+  width: 100%;
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+  background-color:skyblue;
+}
+
+#wrap > h1 {
+  /*width: 5000px;*/
+}
+
+#wrap > h3 {
+  /*width: 500px;*/
+}
+
 
 #back {
   background: bisque;
@@ -38,14 +56,14 @@ body {
   align-items: center;
 }
 
-#header-right {
-  font-weight: bold;
-  background-color: #bbbbbb;
-  font-size: 21px;
-  color: white;
-  padding: 20px;
-  background-image: url("https://www.cre-verse.io/images/news/news4.jpg");
-}
+/*#header-right {*/
+/*  font-weight: bold;*/
+/*  background-color: #bbbbbb;*/
+/*  font-size: 21px;*/
+/*  color: white;*/
+/*  padding: 20px;*/
+/*  background-image: url("https://www.cre-verse.io/images/news/news4.jpg");*/
+/*}*/
 
 .check {
   margin:40px auto;

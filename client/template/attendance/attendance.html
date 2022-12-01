@@ -12,7 +12,8 @@
 <template name="attendance_system">
 
   {{#if isLogin }}
-    <button  id="text" class="check">출근</button>
+    <button  id="text" class="check">{{출퇴근}}</button>
+    <button id="last_deleted">삭제</button>
     {{> attendance_list }}
   {{ else }}
     {{ no_login }}

@@ -1,58 +1,59 @@
 <template name="admin">
   {{#if isAdmin}}
 
-  <p>
-    <label>
-      <input class="c-field" placeholder="Type in Name!" type="text" name="username"/>
-    </label>
-    <br />
-    <button id="btn-search" type="button" class="c-button c-button--brand">Search</button>
-  </p>
+    <p>
+      <label>
+        <input class="c-field" placeholder="Type in Name!" type="text" name="username"/>
+      </label>
+      <br/>
+      <button id="btn-search" type="button" class="c-button c-button--brand">Search</button>
+      <button class="delete_all" >전체삭제</button>
+    </p>
 
-  <table class="c-table">
-    <thead class="c-table__head">
-    <tr class="c-table__row c-table__row--heading">
-      <th class="c-table__cell">이름</th>
-      <th class="c-table__cell">출퇴근</th>
-    </tr>
-    </thead>
+    <table class="c-table">
+      <thead class="c-table__head">
+      <tr class="c-table__row c-table__row--heading">
+        <th class="c-table__cell">이름</th>
+        <th class="c-table__cell">출퇴근</th>
+      </tr>
+      </thead>
 
-    <tbody class="c-table__body">
-    {{#if searchName}}
-      {{#each list}}
-        <tr class="c-table__row">
-         {{#if type}}
-           <td class="c-table__cell">{{name}}</td>
-           <td style="background-color: indianred" class="c-table__cell">출근:{{Times createdAt}}</td>
-            <button class="delete">X</button>
+      <tbody class="c-table __body">
+      {{#if searchName}}
+        {{#each list}}
+          <tr class="c-table__row">
+            {{#if type}}
+              <td class="c-table__cell">{{name}}</td>
+              <td style="background-color: indianred" class="c-table__cell">출근:{{Times createdAt}}</td>
+              <button class="delete">X</button>
+            {{else}}
+              <td class="c-table__cell">{{name}}</td>
+              <td style="background-color: yellowgreen" class="c-table__cell">퇴근:{{Times createdAt}}</td>
+              <button class="delete">X</button>
+            {{/if}}
+          </tr>
+        {{/each}}
+      {{else}}
+        {{#each searchList}}
+          {{#if type}}
+            <tr class="c-table__row">
+              <td class="c-table__cell">{{name}}</td>
+              <td style="background-color: indianred" class="c-table__cell">출근:{{Times createdAt}}</td>
+              <button class="delete">X</button>
+            </tr>
           {{else}}
-            <td class="c-table__cell">{{name}}</td>
-            <td style="background-color: yellowgreen" class="c-table__cell">퇴근:{{Times createdAt}}</td>
-            <button class="delete">X</button>
+            <tr class="c-table__row">
+              <td class="c-table__cell">{{name}}</td>
+              <td style="background-color: yellowgreen" class="c-table__cell">퇴근:{{Times createdAt}}</td>
+              <button class="delete">X</button>
+            </tr>
           {{/if}}
-        </tr>
-      {{/each}}
-    {{else}}
-      {{#each searchList}}
-        {{#if type}}
-    <tr class="c-table__row">
-      <td class="c-table__cell">{{name}}</td>
-      <td style="background-color: indianred" class="c-table__cell">출근:{{Times createdAt}}</td>
-      <button class="delete">X</button>
-    </tr>
-        {{else}}
-    <tr class="c-table__row">
-      <td class="c-table__cell">{{name}}</td>
-      <td style="background-color: yellowgreen" class="c-table__cell">퇴근:{{Times createdAt}}</td>
-      <button class="delete">X</button>
-    </tr>
-        {{/if}}
-      {{/each}}
+        {{/each}}
 
-    {{/if}}
+      {{/if}}
 
-    </tbody>
-  </table>
+      </tbody>
+    </table>
   {{else}} nope
   {{/if}}
 </template>
@@ -62,13 +63,13 @@
   {{#if searchName}}
     Nope
   {{else}}
-  {{#each searchList}}
-  {{#if type2}}
-  <p>name:{{name}} 😇출근:{{getDate createdAt}}</p>
-  {{else}}
-  <p>name:{{name}} 😇퇴근:{{getDate createdAt}}</p>
-  {{/if}}
-  {{/each}}
+    {{#each searchList}}
+      {{#if type2}}
+        <p>name:{{name}} 😇출근:{{getDate createdAt}}</p>
+      {{else}}
+        <p>name:{{name}} 😇퇴근:{{getDate createdAt}}</p>
+      {{/if}}
+    {{/each}}
   {{/if}}
 
 </template>
