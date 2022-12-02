@@ -15,6 +15,7 @@ Template.signin.helpers({
 
 Template.signin.events({
   "click #button_sign"(evt, tmpl) {
+    // console.log("hey", tmpl.data)
     SignIn(evt, tmpl)
   },
 

@@ -15,7 +15,7 @@ Template.login.helpers({
 
 Template.login.events({
 
-  "click .check"(evt, tmpl) {
+  "click #check"(evt, tmpl) {
     LogIn(evt,tmpl);
   },
 
