@@ -11,7 +11,8 @@ import '../templates/header/header.js'
 import '../templates/footer/footer.js'
 import '../templates/admin/admin.js'
 import '../templates/attendance/attendance.js'
-import '../templates/attendance/attendance_list.js'
+// import '../templates/attendance/attendance_list.js'
+
 
 FlowRouter.route('/signin', {
   name: 'signin',
