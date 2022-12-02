@@ -1,4 +1,6 @@
 import './attendance.html'
+import '/imports/client/templates/attendance/attendance_list.js'
+import '/imports/client/templates/attendance/attendance_number.js'
 import Attendance from "/imports/collections";
 
 Session.set('now', new Date())//초기화작업
@@ -19,7 +21,7 @@ Template.attendance_system.helpers({
     //몽고디비 마지막시간과 현재시간을 비교해 1시간이상차이나면 버튼을 막음
     //우선 확인을 위해 3초로 하겠음
     const attendance = Attendance.findOne({user_id: Meteor?.userId()}, {sort: {createdAt: -1}})
-    const last_data = attendance.createdAt
+    const last_data = attendance?.createdAt
     const now = Session.get('now')
 
     if (!attendance) {
