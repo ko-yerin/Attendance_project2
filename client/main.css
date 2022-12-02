@@ -13,36 +13,31 @@ a {
 }
 
 body {
-  /*height: 100%;*/
+  height: 100%;
   font-family: sans-serif;
 }
-
-#wrap {
-  width: 100%;
-  align-items: center;
-  display: flex;
-  flex-direction: row;
-  background-color:skyblue;
-}
-
-#wrap > h1 {
-  /*width: 5000px;*/
-}
-
-#wrap > h3 {
-  /*width: 500px;*/
-}
-
 body {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-  margin: 0;
+  /*margin: 0;*/
 }
 main {
   margin: 0 auto;
   flex:1;
   max-width: 80ch;
+}
+.footer {
+  position: absolute;
+  bottom: 0;
+  /*margin-top:auto;*/
+  height: 165px;
+  width: 100%;
+  padding: 0 15px;
+  line-height: 30px;
+  color: white;
+  border-top: 1px solid #dee5e7;
+  background-color: rebeccapurple;
 }
 .button{
   display: inline-block;
@@ -86,13 +81,13 @@ main {
   align-items: center;
 }
 
-#signin {
+#signIn {
   margin: 5px;
   float: right;
   align-items: center;
 }
 
-#header-right {
+#wrap {
   opacity: 1.2;
   font-weight: bold;
   background-color: #bbbbbb;
@@ -107,8 +102,7 @@ main {
       rgba(20, 20, 20, 0.75) 75%,
       rgba(20, 20, 20, 1) 100%
   ), url("https://www.cre-verse.io/images/news/news4.jpg");
-  /* todo - 왜 배경 이미지가 안나오죠.... */
-  /*background-image: url("https://www.cre-verse.io/images/news/news4.jpg");*/
+  /* todo - 왜 배경 이미지가 안나오죠.... 🚀고참님이랑 겹쳤네요 고참님 초반에 작업한게 있어서 ..ㅎ */
 }
 
 .check {
@@ -185,21 +179,15 @@ main {
   cursor: pointer;
 }
 
-.footer {
-  position: absolute;
-  bottom: 0;
-  height: 165px;
-  width: 100%;
-  padding: 0 15px;
-  line-height: 30px;
-  color: white;
-  border-top: 1px solid #dee5e7;
-  background-color: rebeccapurple;
-}
 
 .loading{
   margin-top: 150px;
   display: flex;
   font-size: 40px;
+  justify-content: center;
+}
+
+.error-emoji{
+  display: flex;
   justify-content: center;
 }
