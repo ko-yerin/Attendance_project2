@@ -1,0 +1,25 @@
+<template name="login">
+  <br/>
+
+  <h1 style="margin-left: 10px">Login</h1>
+  <p style="margin-left: 10px">ID:
+    <input name="username"  type="text" placeholder="아이디 또는 이메일" style="margin-left: 10px"/>
+  </p>
+
+  <p style="margin-left: 10px">Password:
+    {{! todo - 비밀번호 표시 안되어 있는데 비밀번호가 보이는 버그가 있더군요! }}
+    <input name="password" type="{{type_change2}}" placeholder="비밀번호" style="margin-left: 10px"/>
+  </p>
+  <p>
+    {{! todo - 아이디 저장하기가 있으면 참 좋을것 같군요! }}
+    <label><input id="password_check2" type="checkbox" style="margin-left: 10px"> 비밀번호 표시</label>
+  </p>
+  <button class="check" type="button" style="margin-left: 10px">
+    Login
+  </button>
+  <a href="/" class='cancel' type="button" style="margin-left: 10px">
+    Cancel
+  </a>
+
+</template>
+

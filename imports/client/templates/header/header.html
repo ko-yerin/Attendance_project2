@@ -1,0 +1,27 @@
+<template name="header">
+  <div id="wrap">
+    <h1>
+      <a href="/">
+        <img src="/creverse_logo.png" style="width: 120px">
+      </a>
+    </h1>
+
+    <h3 id="main_text">
+      출퇴근관리 사이트
+    </h3>
+    {{! todo - 버튼 모두 a 태그로 바꾸도록 합니다. }}
+    {{#if is_login}}
+      <button id="logout" type="button" class="button">logout</button>
+    {{else}}
+      <button id="login" type="button" class="button">login</button>
+      <button id="signin" type="button" class="button">signin</button>
+    {{/if}}
+
+    <h2>Attendance</h2>
+    <p class="c-paragraph">
+      <br />
+      "CREVERSE is having NFT market and Wallet with Metaverse"
+    </p>
+  </div>
+</template>
+
